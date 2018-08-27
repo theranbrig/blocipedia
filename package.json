@@ -1,0 +1,11 @@
+{
+  "name": "blocipedia",
+  "version": "1.0.0",
+  "description": "CRUD Express App",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "export NODE_ENV=test && jasmine"
+  },
+  "author": "Theran Brigowatz",
+  "license": "ISC"
+}
