@@ -4,8 +4,16 @@
   "description": "CRUD Express App",
   "main": "src/server.js",
   "scripts": {
-    "test": "export NODE_ENV=test && jasmine"
+    "test": "export NODE_ENV=test && jasmine",
+    "start": "node src/server.js"
   },
   "author": "Theran Brigowatz",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.2.0",
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
