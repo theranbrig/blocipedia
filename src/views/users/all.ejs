@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+  <% include ../static/partials/head.ejs %>
+</head>
+
+<body>
+
+  <div id="layout">
+    <% include ../static/partials/navbar.ejs %>
+      <div class="pure-g">
+					<div class="pure-u-1 pure-u-md-1-3">
+						<div class="title-bar-left"></div>
+						<h1 class="splash-head">Blocipedia Users</h1>
+            <ul>
+              <% users.forEach(user => { %>
+                <a><%= user.username %></a>
+              <% }) %>
+            </ul>
+					</div>
+					<div class="pure-u-1 pure-u-md-2-3">
+						<div class="title-bar-right"></div>
+						<h1>Main content area.</h1>
+					</div>
+			</div>
+  </div>
+  <% include ../static/partials/bodyscripts.ejs %>
+</body>
