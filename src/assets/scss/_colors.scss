@@ -1,5 +1,35 @@
-  $black-olive: #3b413c;
-  $white: #fff;
-  $cambridge-blue: #9db5b2;
-  $azureish-white: #daf0ee;
-  $pearl-aqua: #94d1be;
+$black-olive: #3b413c;
+$white: #e4e4e4;
+$cambridge-blue: #9db5b2;
+$azureish-white: #daf0ee;
+$pearl-aqua: #94d1be;
+
+.pure-button,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+	background-color: $pearl-aqua !important;
+	color: $black-olive;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.pure-button:hover,
+a.pure-button-primary:hover, {
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	transform: scale(1.02)
+}
+
+.sign-up-form a {
+	color: darken($cambridge-blue, 15%);
+	text-decoration: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-form a:hover {
+  color: darken($cambridge-blue, 20%);
+}
+
+.pure-form .pure-group input:focus {
+	border-color: $pearl-aqua;
+}
+

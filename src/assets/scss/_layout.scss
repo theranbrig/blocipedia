@@ -11,6 +11,33 @@ h2 {
 	text-align: center;
 }
 
+.sign-up-form {
+	text-align: center;
+	justify-content: center;
+}
+
+.center-item-h {
+	margin: 0 auto;
+	width: 50%; /* just an arbitrary amount */
+}
+
+.pure-form .pure-group input {
+	margin: 0 auto !important;
+}
+
+.pure-g {
+	display: flex;
+	justify-content: center;
+}
+
+.sign-up-form {
+	padding: 0 3%;
+}
+.sign-up-form a {
+	display: block;
+	padding: 15px 0 0 0;
+}
+
 @media screen and (max-width: 767px) {
 	div.title-bar-right {
 		height: 0 !important;
