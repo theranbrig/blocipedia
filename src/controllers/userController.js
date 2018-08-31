@@ -19,7 +19,7 @@ module.exports = {
 			from: 'admin@blocipedia.com',
 			subject: 'Welcome to Blocipedia',
 			html:
-				'<h1>Welcome to Blocipedia.</h1> <a href="https://blocipedia-theranbrig.herokuapp.com/">Visit us and start exploring.</a>'
+				'<h1>Welcome to Blocipedia.</h1> <br> <a href="https://blocipedia-theranbrig.herokuapp.com/">Visit us and start exploring.</a>'
 		};
 		userQueries.createUser(newUser, (err, user) => {
 			console.log(newUser);
