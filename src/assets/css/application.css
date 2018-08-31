@@ -327,7 +327,7 @@ p {
   font-size: 22px;
   line-height: 20px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .closebtn:hover {
@@ -336,7 +336,7 @@ p {
 
 .alert {
   padding: 20px;
-  background-color: #E78C05;
+  background-color: #e78c05;
   color: white;
   margin-bottom: 15px;
 }
