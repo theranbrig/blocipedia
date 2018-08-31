@@ -1,3 +1,32 @@
+.pure-button,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+  background-color: #94d1be !important;
+  color: #3b413c;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.pure-button:hover,
+a.pure-button-primary:hover {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.sign-up-form a {
+  color: #719490;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-form a:hover {
+  color: #668682;
+}
+
+.pure-form .pure-group input:focus {
+  border-color: #94d1be;
+}
+
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -5,6 +34,35 @@
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
+.pure-button,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+  background-color: #94d1be !important;
+  color: #3b413c;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.pure-button:hover,
+a.pure-button-primary:hover {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.sign-up-form a {
+  color: #719490;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-form a:hover {
+  color: #668682;
+}
+
+.pure-form .pure-group input:focus {
+  border-color: #94d1be;
+}
+
 .hamburger {
   padding: 15px 15px;
   display: inline-block;
@@ -110,23 +168,77 @@
   transform: rotate(90deg);
 }
 
+.pure-button,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+  background-color: #94d1be !important;
+  color: #3b413c;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.pure-button:hover,
+a.pure-button-primary:hover {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.sign-up-form a {
+  color: #719490;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-form a:hover {
+  color: #668682;
+}
+
+.pure-form .pure-group input:focus {
+  border-color: #94d1be;
+}
+
 .pure-menu-heading {
   background-color: #9db5b2 !important;
   color: white !important;
   font-family: "Montserrat", sans-serif;
+  font-weight: 300;
 }
 
 .pure-menu li a {
   color: #d5d9d6 !important;
-  font-family: "Montserrat", sans-serif;
 }
 
 #menu {
   background-color: #3b413c !important;
 }
 
-h1 {
-  font-family: "Montserrat", sans-serif;
+.pure-button,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+  background-color: #94d1be !important;
+  color: #3b413c;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.pure-button:hover,
+a.pure-button-primary:hover {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.sign-up-form a {
+  color: #719490;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-form a:hover {
+  color: #668682;
+}
+
+.pure-form .pure-group input:focus {
+  border-color: #94d1be;
 }
 
 div.title-bar-left,
@@ -140,10 +252,93 @@ h2 {
   text-align: center;
 }
 
+.sign-up-form {
+  text-align: center;
+  justify-content: center;
+}
+
+.center-item-h {
+  margin: 0 auto;
+  width: 50%;
+  /* just an arbitrary amount */
+}
+
+.pure-form .pure-group input {
+  margin: 0 auto !important;
+}
+
+.pure-g {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-up-form {
+  padding: 0 3%;
+}
+
+.sign-up-form a {
+  display: block;
+  padding: 15px 0 0 0;
+}
+
 @media screen and (max-width: 767px) {
   div.title-bar-right {
     height: 0 !important;
   }
+}
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4em;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3em;
+  letter-spacing: 0.04em;
+  word-spacing: 0.04em;
+}
+
+.pure-menu li a {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.1em;
+  line-height: 1.8em;
+  font-weight: 300;
+}
+
+.pure-menu-heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #E78C05;
+  color: white;
+  margin-bottom: 15px;
 }
 
 /*# sourceMappingURL=application.css.map */
