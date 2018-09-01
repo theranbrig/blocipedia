@@ -336,9 +336,11 @@ p {
 
 .alert {
   padding: 20px;
+  margin: 0 auto;
   background-color: #e78c05;
   color: white;
   margin-bottom: 15px;
+  width: 50%;
 }
 
 /*# sourceMappingURL=application.css.map */
