@@ -23,8 +23,6 @@ module.exports = {
 		};
 		userQueries.createUser(newUser, (err, user) => {
 			if (err) {
-				console.log(err);
-				// req.flash('notice', 'You are already signed up.');
 				req.flash('error', err);
 				res.redirect('/users/sign_up');
 			} else {
