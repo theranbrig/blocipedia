@@ -17,8 +17,11 @@ module.exports = {
 					User.findOne({
 						where: { email }
 					}).then(user => {
-						if (!user || !authHelper.comparePass(password, user.password)) {
-							return done(null, false, { message: 'Invalid email or password' });
+						if (!user) {
+							return done(null, false, { message: 'Invalid email address.' });
+						}
+						if (!authHelper.comparePass(password, user.password)) {
+							return done(null, false, { message: 'Invalid password.' });
 						}
 						return done(null, user);
 					});
