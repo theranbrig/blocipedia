@@ -22,14 +22,19 @@ module.exports = {
 				'<h1>Welcome to Blocipedia.</h1> <br> <a href="https://blocipedia-theranbrig.herokuapp.com/">Visit us and start exploring.</a>'
 		};
 		userQueries.createUser(newUser, (err, user) => {
-			console.log(newUser);
 			if (err) {
+				console.log(err);
+				// req.flash('notice', 'You are already signed up.');
 				req.flash('error', err);
 				res.redirect('/users/sign_up');
 			} else {
+				z;
 				passport.authenticate('local')(req, res, () => {
 					sgMail.send(msg);
-					req.flash('notice', "You've successfully signed in!");
+					req.flash(
+						'notice',
+						"You've successfully signed up for Blocipedia! Check your email for more information."
+					);
 					res.redirect('/');
 				});
 			}
@@ -53,15 +58,5 @@ module.exports = {
 		req.logout();
 		req.flash('notice', "You've successfully signed out!");
 		res.redirect('/');
-	},
-	show(req, res, next) {
-		userQueries.getUser(req.params.id, (err, result) => {
-			if (err || result.user === undefined) {
-				req.flash('notice', 'No user found with that ID.');
-				res.redirect('/');
-			} else {
-				res.render('users/show', { ...result });
-			}
-		});
 	}
 };
