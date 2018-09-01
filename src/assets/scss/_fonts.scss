@@ -2,24 +2,26 @@ $main-font: 'Montserrat', sans-serif;
 $second-font: 'Raleway', sans-serif;
 
 h1 {
-  font-family: $main-font;
-  font-size: 4em;
-  font-weight: 300;
-  letter-spacing: 0.03em;
+	font-family: $main-font;
+	font-size: 4em;
+	font-weight: 300;
+	letter-spacing: 0.03em;
 }
 
 h2 {
-  font-family: $main-font;
-  font-size: 2em;
-  font-weight: 300;
-  letter-spacing: 0.02em;
+	font-family: $main-font;
+	font-size: 2em;
+	font-weight: 300;
+	letter-spacing: 0.02em;
 }
 
+.alert li,
+.alert h4,
 p {
-  font-family: $second-font;
-  font-size: 1.3em;
-  letter-spacing: 0.04em;
-  word-spacing: 0.04em;
+	font-family: $second-font;
+	font-size: 1.3em;
+	letter-spacing: 0.04em;
+	word-spacing: 0.04em;
 }
 
 // Sidebar font stylings

@@ -281,6 +281,15 @@ h2 {
   padding: 15px 0 0 0;
 }
 
+.alert ul {
+  padding: 0;
+}
+
+.alert li {
+  list-style-type: none;
+  text-align: center;
+}
+
 @media screen and (max-width: 767px) {
   div.title-bar-right {
     height: 0 !important;
@@ -300,6 +309,8 @@ h2 {
   letter-spacing: 0.02em;
 }
 
+.alert li,
+.alert h4,
 p {
   font-family: "Raleway", sans-serif;
   font-size: 1.3em;
