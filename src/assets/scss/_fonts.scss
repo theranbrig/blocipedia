@@ -95,10 +95,6 @@ a.back-to-top,
 	font-weight: 300;
 }
 
-.home-bottom p {
-	text-align: justify;
-}
-
 .blurred-content i {
 	font-size: 3em;
 }
@@ -107,14 +103,23 @@ a.back-to-top,
 	font-weight: 300;
 }
 
+.pure-button-primary {
+	font-family: $main-font;
+}
+
 i.fa-globe {
 	font-size: 4em;
+}
+
+.features-list p {
+	font-size: 1.1em;
+	letter-spacing: 0.15em;
 }
 
 // Tablet View
 
 @media screen and (max-width: 48em) {
-	.home-page h1 {
+	.blurred-content h1 {
 		font-size: 3em;
 	}
 }
@@ -122,7 +127,7 @@ i.fa-globe {
 // Mobile View
 
 @media screen and (max-width: 35.5em) {
-	.home-page h1 {
+	.blurred-content h1 {
 		font-size: 2.5em;
 	}
 }
