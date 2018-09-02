@@ -48,37 +48,93 @@
 	padding-bottom: 40px !important;
 }
 
-@media screen and (min-width: 48em) {
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1024px) {
 	.blurred-box {
-		top: 320px;
+		width: 70%;
+		right: calc(15% - 75px);
+	}
+
+	.features-list p {
+		padding: 5px;
+		height: 150px;
+	}
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.blurred-box {
+		top: 400px;
 		width: 80%;
 		right: calc(10% - 75px);
 	}
+
+	.features-list p {
+		padding: 5px;
+		height: 220px;
+	}
 }
 
-@media screen and (max-width: 48em) {
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 	.blurred-box {
-		top: 500px;
+		top: 300px;
 		width: 70%;
 		right: calc(15% - 75px);
-		border: 2px red solid;
 	}
 
 	.blurred-content {
-		height: 650px;
+		height: calc(100vh - 100px);
+	}
+
+	.features-list p {
+		padding: 5px;
+		height: 150px;
 	}
 }
 
-@media screen and (max-width: 35em) {
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
 	.blurred-box {
-		top: 320px;
-		right: 5%;
-		width: 90%;
+		top: 330px;
+		width: 84%;
+		right: 8%;
+	}
+
+	.blurred-content {
+		height: calc(100vh - 100px);
 	}
 }
 
-@media screen and (max-width: 23em) {
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.blurred-box {
+		top: 330px;
+		width: 90%;
+		right: 5%;
+	}
+
 	.blurred-content {
-		height: 500px;
+		height: calc(100vh - 110px);
 	}
 }
