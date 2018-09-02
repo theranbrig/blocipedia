@@ -9,15 +9,42 @@
   <div id="layout">
     <% include ./partials/navbar.ejs %>
       <div class="pure-g">
-					<div class="pure-u-1 pure-u-md-1-3">
+					<div class="pure-u-1">
 						<div class="title-bar-left"></div>
-						<% include ./partials/messages.ejs %>
-						<h1 class="splash-head"><%= message %> </h1>
-						<h2>Wiki's for you</h2>
-					</div>
-					<div class="pure-u-1 pure-u-md-2-3">
-						<div class="title-bar-right"></div>
-						<h1>Main content area.</h1>
+							<div class="splash-screen">
+								<div class="blurred-box">
+									<div class="blurred-content">
+										<h1>Welcome To Blocipedia</h1>
+										<i class="fas fa-globe"></i>
+										<div class="home-bottom">
+											<div class="pure-u-1 home-features">
+												<p>Welcome to Blocipedia.  This is an open-source community committed to the sharing of information and ideas from around the world.  Work together to create an open world of ideas and knowledge.</p>
+												<div>
+													<div class="pure-u-1 pure-u-md-1-3">
+														<i class="fas fa-handshake"></i>
+														<h3>CONNECT</h3>
+														<p>A premier source for user-generated content.  Connect, share, and learn about any topic.  If you don't find it, add it and share your knowledge with the world.</p>
+														<a class="pure-button pure-button-primary" href="/users/sign_up">Sign up today and get started.</a>
+													</div>
+													<div class="pure-u-1 pure-u-md-1-3">
+														<i class="fas fa-users"></i>
+														<h3>COLLABORATE</h3>
+														<p>Work with other memebers from around the world to have the most complete Wiki possible.  We allow you to edit and have control over content as a Wiki Admin.</p>
+														<a class="pure-button pure-button-primary" href="/users/sign_up">Learn how to become a wiki admin.</a>
+													</div>
+													<div class="pure-u-1 pure-u-md-1-3">
+														<i class="fas fa-user-secret"></i>
+														<h3>Private Wikis</h3>
+														<p>Premium Users have access to private wikis that only they can see.  You can choose who you would like to share with and who can contribute cotent as a Premium User.</p>
+														<a class="pure-button pure-button-primary" href="/users/sign_up">Check out Premium User benefits. </a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 			</div>
   </div>

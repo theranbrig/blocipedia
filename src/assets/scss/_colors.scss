@@ -3,6 +3,7 @@ $white: #e4e4e4;
 $cambridge-blue: #9db5b2;
 $azureish-white: #daf0ee;
 $pearl-aqua: #94d1be;
+$text-color: #131313;
 
 .pure-button,
 .pure-button-selected,
@@ -14,22 +15,61 @@ a.pure-button-selected {
 }
 
 .pure-button:hover,
-a.pure-button-primary:hover, {
+a.pure-button-primary:hover {
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-	transform: scale(1.02)
+	transform: scale(1.02);
 }
 
 .sign-up-form a {
 	color: darken($cambridge-blue, 15%);
 	text-decoration: none;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .sign-up-form a:hover {
-  color: darken($cambridge-blue, 20%);
+	color: darken($cambridge-blue, 20%);
 }
 
 .pure-form .pure-group input:focus {
 	border-color: $pearl-aqua;
 }
 
+.main-image h1 {
+	color: $white;
+	text-shadow: $black-olive 0px 0px 10px;
+}
+
+.main-content p {
+	color: $text-color;
+}
+
+.side-content h5,
+.side-content h3,
+.wiki-content h4 {
+	color: darken($cambridge-blue, 15%);
+}
+
+a.back-to-top,
+.wiki-content li a {
+	color: $cambridge-blue;
+}
+
+.home-bottom p {
+	color: darken($black-olive, 10%);
+}
+
+.blurred-content h1,
+.blurred-content i,
+.blurred-content h3 {
+	color: darken($azureish-white, 10%);
+	text-shadow: $black-olive 0px 0px 10px;
+}
+
+.blurred-content p {
+	color: $white;
+	text-shadow: $black-olive 0px 0px 7px;
+}
+
+.blurred-content .pure-button {
+	color: $black-olive;
+}
