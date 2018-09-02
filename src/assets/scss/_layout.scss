@@ -4,8 +4,10 @@
 	height: 47px !important;
 	background-color: $cambridge-blue;
 	position: sticky;
+	min-width: 100%;
 	top: 0;
 	z-index: 100;
+	position: relative;
 }
 
 h1,
