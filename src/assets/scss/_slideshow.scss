@@ -50,13 +50,15 @@
 
 @media screen and (min-width: 48em) {
 	.blurred-box {
-		right: calc(20% - 75px);
+		top: 320px;
+		width: 80%;
+		right: calc(10% - 75px);
 	}
 }
 
-@media screen and (max-width: 35em) {
+@media screen and (max-width: 48em) {
 	.blurred-box {
-		top: 40%;
+		top: 320px;
 		right: 5%;
 		width: 90%;
 	}
