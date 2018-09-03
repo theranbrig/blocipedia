@@ -24,9 +24,9 @@ module.exports = {
 		userQueries.createUser(newUser, (err, user) => {
 			if (err) {
 				req.flash('error', err);
+				console.log(err);
 				res.redirect('/users/sign_up');
 			} else {
-				z;
 				passport.authenticate('local')(req, res, () => {
 					sgMail.send(msg);
 					req.flash(
