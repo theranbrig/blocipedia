@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 
 <head>
-  <% include ./partials/head.ejs %>
+  <% include ../static/partials/head.ejs %>
 </head>
 
 <body>
 
   <div id="layout">
-    <% include ./partials/navbar.ejs %>
+    <% include ../static/partials/navbar.ejs %>
       <div class="pure-g">
 					<div class="pure-u-1">
 						<div class="title-bar-left"></div>
 							<div class="pure-u-1 main-image" id="top-image">
 								<img src="https://images.unsplash.com/photo-1529025797902-c04dc9523016?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0220add331b26be9cac070a9aa84a743"/>
-								<h1>Redwood Forests</h1>
+								<h1><%= wiki.title %></h1>
 							</div>
 						<div class="pure-u-1 wiki-content">
 							<div class="pure-u-1 pure-u-md-16-24 offset-md-1-24 main-content">
-								<h3>The California Redwoods</h3>
+								<h3><%= wiki.body %></h3>
 
 								<p>Lorem ipsum dolor amet distillery hashtag franzen, marfa pickled banh mi chartreuse. Migas fanny pack green juice flexitarian gastropub helvetica synth post-ironic pickled hammock typewriter pok pok ennui. Master cleanse wolf pickled, squid occupy hammock gastropub flexitarian bicycle rights plaid. Air plant normcore banjo chartreuse lyft, vaporware shoreditch artisan af distillery kombucha blue bottle live-edge yuccie YOLO.</p>
 
@@ -66,6 +66,12 @@
 									<li><a href='#1'>Seedlings</a></li>
 								</ul>
 								<a class="back-to-top"href='#top-image'>Back to top</a>
+								<div>
+									<form action='/wikis/<%= wiki.id %>/destroy' method="POST">
+									  <button type="submit"class="pure-button pure-input-2-3 pure-button-error">Delete Wiki</button>
+									</form>
+									  <a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-input-2-3 pure-button-error">Edit Wiki</a>
+								</div>
 							</div>
 							<div class="pure-u-1 pure-u-md-6-24 side-content">
 								<img class="side-bar-image" src="https://images.unsplash.com/photo-1520580266137-41b83d2c3b32?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=95335d9a29bef002a1d3e2f909391698&auto=format&fit=crop&w=655&q=80"/>
@@ -95,5 +101,5 @@
 					</div>
 			</div>
   </div>
-  <% include ./partials/bodyscripts.ejs %>
+  <% include ../static/partials/bodyscripts.ejs %>
 </body>

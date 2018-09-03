@@ -34,6 +34,15 @@ p {
 	word-spacing: 0.04em;
 }
 
+input,
+form {
+	font-family: $second-font;
+}
+
+.form-bottom-links a {
+	font-family: $main-font;
+}
+
 .main-content p {
 	font-size: 1.1em;
 	line-height: 1.5em;
@@ -114,6 +123,25 @@ i.fa-globe {
 .features-list p {
 	font-size: 1em;
 	letter-spacing: 0.15em;
+}
+
+.wiki-list-head th {
+	font-family: $main-font;
+	font-weight: 300;
+	font-size: 1.4em;
+}
+
+.wiki-list-row {
+	font-family: $second-font;
+}
+
+.wiki-list-row a {
+	text-decoration: none;
+}
+
+.wiki-list-row td {
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
 }
 
 // Tablet View

@@ -73,3 +73,12 @@ a.back-to-top,
 .blurred-content .pure-button {
 	color: $black-olive;
 }
+
+.wiki-list-row a {
+	color: darken($cambridge-blue, 15%);
+}
+
+.wiki-list-head {
+	background-color: $cambridge-blue !important;
+	color: lighten($white, 10%) !important;
+}

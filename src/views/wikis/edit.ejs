@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+  <% include ../static/partials/head.ejs %>
+</head>
+
+<body>
+
+  <div id="layout">
+    <% include ../static/partials/navbar.ejs %>
+    <div class="pure-g">
+    <div class="pure-u-1">
+      <div class="title-bar-left"></div>
+        <div class="sign-up-form">
+          <h1>Create a New Wiki</h1>
+          <h2>Add to Blocipedia</h2>
+          <p>Create a new Wiki below by adding a title and brief description of the subject.</p>
+          <div>
+            <% include ../static/partials/messages.ejs %>
+            <form method="POST" action="/wikis/<%= wiki.id %>/update" class="pure-form">
+              <fieldset class="pure-group">
+                <input type="text" name="title" value="<%= wiki.title %>" placeholder="Enter Wiki Title" class="pure-input-2-3" />
+                <input type="text" name="body" value="<%= wiki.body %>" placeholder="Enter Brief Description" class="pure-input-2-3"/>
+                </fieldset>
+                <label for="private" class="pure-checkbox">
+                  <input id="private" type="checkbox" value="true">
+                  Make Wiki Private?
+                </label>
+              <button type="submit"class="pure-button pure-input-2-3 pure-button-primary">Edit Wiki</button>
+            </form>
+          </div>
+          <div class="form-bottom-links">
+            <a href="#">See our guide on how to create a great wiki</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ../static/partials/bodyscripts.ejs %>
+</body>

@@ -165,6 +165,34 @@ img.side-bar-image {
 	padding: 10px 0;
 }
 
+.wiki-list {
+	margin: 5%;
+}
+
+.wiki-list table {
+	width: 90%;
+	text-align: left;
+}
+
+.wiki-list-head-date,
+.wiki-list-row-date {
+	text-align: right;
+}
+
+.browse-wiki p {
+	text-align: center;
+	width: 90%;
+	margin-left: 5%;
+}
+
+.browse-wiki h1 {
+	padding-top: 50px;
+}
+
+.browse-wiki {
+	text-align: center;
+}
+
 /*
 Offsets from https://raw.githubusercontent.com/tilomitra/pure/d7f85e37abec3fdab14a541305ad05783159655c/src/grids/css/grids-offsets.css
 Media queries from Pure v0.5.0

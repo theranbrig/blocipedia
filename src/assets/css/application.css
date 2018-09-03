@@ -67,6 +67,15 @@ a.back-to-top,
   color: #3b413c;
 }
 
+.wiki-list-row a {
+  color: #719490;
+}
+
+.wiki-list-head {
+  background-color: #9db5b2 !important;
+  color: #fefefe !important;
+}
+
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -141,6 +150,15 @@ a.back-to-top,
 
 .blurred-content .pure-button {
   color: #3b413c;
+}
+
+.wiki-list-row a {
+  color: #719490;
+}
+
+.wiki-list-head {
+  background-color: #9db5b2 !important;
+  color: #fefefe !important;
 }
 
 .hamburger {
@@ -319,6 +337,15 @@ a.back-to-top,
   color: #3b413c;
 }
 
+.wiki-list-row a {
+  color: #719490;
+}
+
+.wiki-list-head {
+  background-color: #9db5b2 !important;
+  color: #fefefe !important;
+}
+
 .pure-menu-heading {
   background-color: #9db5b2 !important;
   color: white !important;
@@ -401,6 +428,15 @@ a.back-to-top,
 
 .blurred-content .pure-button {
   color: #3b413c;
+}
+
+.wiki-list-row a {
+  color: #719490;
+}
+
+.wiki-list-head {
+  background-color: #9db5b2 !important;
+  color: #fefefe !important;
 }
 
 .title-bar-left {
@@ -564,6 +600,34 @@ img.side-bar-image {
   margin-bottom: 20px;
   overflow: auto;
   padding: 10px 0;
+}
+
+.wiki-list {
+  margin: 5%;
+}
+
+.wiki-list table {
+  width: 90%;
+  text-align: left;
+}
+
+.wiki-list-head-date,
+.wiki-list-row-date {
+  text-align: right;
+}
+
+.browse-wiki p {
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.browse-wiki h1 {
+  padding-top: 50px;
+}
+
+.browse-wiki {
+  text-align: center;
 }
 
 /*
@@ -1171,6 +1235,15 @@ p {
   word-spacing: 0.04em;
 }
 
+input,
+form {
+  font-family: "Raleway", sans-serif;
+}
+
+.form-bottom-links a {
+  font-family: "Montserrat", sans-serif;
+}
+
 .main-content p {
   font-size: 1.1em;
   line-height: 1.5em;
@@ -1246,6 +1319,25 @@ i.fa-globe {
 .features-list p {
   font-size: 1em;
   letter-spacing: 0.15em;
+}
+
+.wiki-list-head th {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.4em;
+}
+
+.wiki-list-row {
+  font-family: "Raleway", sans-serif;
+}
+
+.wiki-list-row a {
+  text-decoration: none;
+}
+
+.wiki-list-row td {
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
 }
 
 @media screen and (max-width: 48em) {
