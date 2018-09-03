@@ -1,0 +1,140 @@
+.splash-screen {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: top;
+	background-image: url(https://images.unsplash.com/photo-1503293317069-f8ea8304b4f9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=01398ed1d22b64d780f90d6106a93202&auto=format&fit=crop&w=1950&q=80);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 0;
+}
+
+.blurred-box {
+	width: 60%;
+	height: 700px;
+	background: inherit;
+	position: absolute;
+	overflow: hidden;
+	top: 40%;
+	margin-left: -175px;
+	margin-top: -250px;
+	border-radius: 8px;
+	margin-bottom: 100px;
+}
+
+.blurred-box:before {
+	content: '';
+	position: absolute;
+	top: -25px;
+	left: -25px;
+	bottom: 0;
+	right: 0;
+	background: inherit;
+	box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.2);
+	filter: blur(10px);
+}
+
+.blurred-content {
+	height: 700px;
+	position: relative;
+	overflow: scroll;
+	text-align: center;
+}
+
+.home-bottom > div {
+	padding-bottom: 40px !important;
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1024px) {
+	.blurred-box {
+		width: 70%;
+		right: calc(15% - 75px);
+	}
+
+	.features-list p {
+		padding: 5px;
+		height: 150px;
+	}
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.blurred-box {
+		top: 400px;
+		width: 80%;
+		right: calc(10% - 75px);
+	}
+
+	.features-list p {
+		padding: 5px;
+		height: 220px;
+	}
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.blurred-box {
+		top: 300px;
+		width: 70%;
+		right: calc(15% - 75px);
+	}
+
+	.blurred-content {
+		height: calc(100vh - 100px);
+	}
+
+	.features-list p {
+		padding: 5px;
+		height: 150px;
+	}
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.blurred-box {
+		top: 330px;
+		width: 84%;
+		right: 8%;
+	}
+
+	.blurred-content {
+		height: calc(100vh - 100px);
+	}
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.blurred-box {
+		top: 330px;
+		width: 90%;
+		right: 5%;
+	}
+
+	.blurred-content {
+		height: calc(100vh - 110px);
+	}
+}
