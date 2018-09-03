@@ -1,0 +1,23 @@
+<% if (messages) { %>
+  <% if(messages.error || messages.notice) { %>
+    <div class="alert" role="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <% if (messages.notice) { %>
+        <p><%= `${messages.notice}` %></p>
+      <% } else { %>
+        <h4>Oops: Something went wrong.</h4>
+        <ul>
+          <% messages.error.forEach((err) => { %>
+            <% if (err.name) { %>
+              <li><%= `${err.errors[0].message}` %> </li>
+            <% } else if (err.msg) { %>
+              <li><%= `${err.param}: ${err.msg}` %></li>
+            <% } else { %>
+              <li><%= err %></li>
+            <% } %>
+          <% }) %>
+        </ul>
+      <% } %>
+    </div>
+  <% } %>
+<% } %>
