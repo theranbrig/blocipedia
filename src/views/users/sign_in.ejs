@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+  <% include ../static/partials/head.ejs %>
+</head>
+
+<body>
+
+  <div id="layout">
+    <% include ../static/partials/navbar.ejs %>
+    <div class="pure-g">
+    <div class="pure-u-1">
+      <div class="title-bar-left"></div>
+        <div class="sign-up-form">
+          <h1>Check Out Blocipedia</h1>
+          <h2>Sign In Now</h2>
+          <p>Share your experiences and knowledge with those around the world.  Your journey is only a few clicks away.</p>
+          <div>
+            <% include ../static/partials/messages.ejs %>
+            <form method="POST" action="/users/sign_in" class="pure-form">
+              <fieldset class="pure-group">
+                <input type="email" name="email" placeholder="Enter Email" class="pure-input-2-3" />
+                <input type="password" name="password" placeholder="Enter Password" class="pure-input-2-3"/>
+              </fieldset>
+              <button type="submit"class="pure-button pure-input-2-3 pure-button-primary">Sign In</button>
+            </form>
+          </div>
+          <div>
+            <a href="/users/sign_up">Not yet a member?</a>
+            <a href="#">Read our terms of service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ../static/partials/bodyscripts.ejs %>
+</body>
+

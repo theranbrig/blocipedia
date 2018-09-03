@@ -1,0 +1,16 @@
+@import '_colors';
+
+.pure-menu-heading {
+	background-color: $cambridge-blue !important;
+	color: lighten($azureish-white, 30%) !important;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+}
+
+.pure-menu li a {
+	color: lighten($black-olive, 60%) !important;
+}
+
+#menu {
+	background-color: $black-olive !important;
+}

@@ -1,0 +1,137 @@
+$main-font: 'Montserrat', sans-serif;
+$second-font: 'Raleway', sans-serif;
+
+h1 {
+	font-family: $main-font;
+	font-size: 4em;
+	font-weight: 300;
+	letter-spacing: 0.03em;
+}
+
+h2 {
+	font-family: $main-font;
+	font-size: 2em;
+	font-weight: 300;
+	letter-spacing: 0.02em;
+}
+
+.main-content h3 {
+	font-family: $main-font;
+	font-size: 2em;
+	font-weight: 300;
+}
+
+.main-content p {
+	font-size: 1.1em;
+}
+
+.alert li,
+.alert h4,
+p {
+	font-family: $second-font;
+	font-size: 1.4em;
+	letter-spacing: 0.04em;
+	word-spacing: 0.04em;
+}
+
+.main-content p {
+	font-size: 1.1em;
+	line-height: 1.5em;
+	letter-spacing: 0.06em;
+}
+
+.main-content p {
+	text-align: justify;
+}
+
+.main-content h1 {
+	text-align: left;
+}
+
+.side-content h4,
+.wiki-content h4 {
+	font-family: $main-font;
+	font-size: 1.7em;
+	font-weight: 300;
+}
+
+.side-content h5 {
+	font-family: $main-font;
+	font-size: 1.2em;
+	font-weight: 300;
+}
+
+a.back-to-top,
+.wiki-content li a {
+	font-family: $main-font;
+	font-size: 1.4em;
+	letter-spacing: 0.05em;
+}
+
+.side-content ul li p {
+	font-size: 1.1em;
+}
+
+.side-content h3 {
+}
+
+// Sidebar font stylings
+
+.pure-menu li a {
+	font-family: $main-font;
+	letter-spacing: 0.1em;
+	line-height: 1.8em;
+	font-weight: 300;
+}
+
+.pure-menu-heading {
+	font-family: $main-font;
+	font-weight: 300;
+}
+
+.home-bottom h3 {
+	font-family: $main-font;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+
+.blurred-content i {
+	font-size: 3em;
+}
+
+.blurred-content p {
+	font-weight: 300;
+}
+
+.pure-button-primary {
+	font-family: $main-font;
+}
+
+i.fa-globe {
+	font-size: 4em;
+}
+
+.features-list p {
+	font-size: 1em;
+	letter-spacing: 0.15em;
+}
+
+// Tablet View
+
+@media screen and (max-width: 48em) {
+	.blurred-content h1 {
+		font-size: 3em;
+	}
+}
+
+// Mobile View
+
+@media screen and (max-width: 35.5em) {
+	.blurred-content h1 {
+		font-size: 2.5em;
+	}
+
+	.sign-up-form h1 {
+		font-size: 2.5em;
+	}
+}
