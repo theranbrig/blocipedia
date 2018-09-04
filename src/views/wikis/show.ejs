@@ -12,7 +12,11 @@
 					<div class="pure-u-1">
 						<div class="title-bar-left"></div>
 							<div class="pure-u-1 main-image" id="top-image">
-								<img src="https://images.unsplash.com/photo-1529025797902-c04dc9523016?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0220add331b26be9cac070a9aa84a743"/>
+								<% if (!wiki.image1) { %>
+									<img src="https://images.unsplash.com/photo-1523006833682-76d3571494ef?ixlib=rb-0.3.5&s=2225aafbaa5684867a8d4d81beef29f0" alt="gray placeholder"/>
+								<% } else { %>
+									<img src="<%= wiki.image1 %>" alt="<%= wiki.title %>-main image"/>
+								<% } %>
 								<h1><%= wiki.title %></h1>
 							</div>
 						<div class="pure-u-1 wiki-content">
@@ -74,7 +78,11 @@
 								</div>
 							</div>
 							<div class="pure-u-1 pure-u-md-6-24 side-content">
-								<img class="side-bar-image" src="https://images.unsplash.com/photo-1520580266137-41b83d2c3b32?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=95335d9a29bef002a1d3e2f909391698&auto=format&fit=crop&w=655&q=80"/>
+								<% if (!wiki.image1) { %>
+									<img class="side-bar-image" src="https://images.unsplash.com/photo-1503442862980-50ccb3f1d085?ixlib=rb-0.3.5&s=4fd204e0b6d85fa52d6ecc73da1e98e7" alt="you are here placeholder"/>
+								<% } else { %>
+									<img class="side-bar-image" src="<%= wiki.image2 %>" alt="<%= wiki.title %>-sidebar image"/>
+								<% } %>
 								<h4>Fast Facts</h4>
 								<div class="fast-facts">
 									<ul>

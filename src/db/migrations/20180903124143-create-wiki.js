@@ -16,6 +16,12 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.STRING
 			},
+			image1: {
+				type: Sequelize.STRING
+			},
+			image2: {
+				type: Sequelize.STRING
+			},
 			private: {
 				allowNull: false,
 				type: Sequelize.BOOLEAN

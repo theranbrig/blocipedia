@@ -66,8 +66,9 @@ a.back-to-top,
 }
 
 .blurred-content p {
-	color: $white;
-	text-shadow: $black-olive 0px 0px 7px;
+	color: lighten($azureish-white, 15%);
+	text-shadow: darken($black-olive, 30%) 0px 0px 7px;
+	
 }
 
 .blurred-content .pure-button {

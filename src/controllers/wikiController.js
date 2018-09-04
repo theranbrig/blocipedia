@@ -4,7 +4,7 @@ module.exports = {
 	index(req, res, next) {
 		wikiQueries.getAllWikis((err, wikis) => {
 			if (err) {
-				res.redirect(500, 'static/index');
+				res.redirect(500, '/');
 			} else {
 				res.render('wikis/wiki', { wikis });
 			}
@@ -17,7 +17,9 @@ module.exports = {
 		let newWiki = {
 			title: req.body.title,
 			body: req.body.body,
-			private: req.body.private
+			private: req.body.private,
+			image1: req.body.image1,
+			image2: req.body.image2
 		};
 		wikiQueries.addWiki(newWiki, (err, wiki) => {
 			if (err) {

@@ -59,8 +59,8 @@ a.back-to-top,
 }
 
 .blurred-content p {
-  color: #e4e4e4;
-  text-shadow: #3b413c 0px 0px 7px;
+  color: white;
+  text-shadow: black 0px 0px 7px;
 }
 
 .blurred-content .pure-button {
@@ -144,8 +144,8 @@ a.back-to-top,
 }
 
 .blurred-content p {
-  color: #e4e4e4;
-  text-shadow: #3b413c 0px 0px 7px;
+  color: white;
+  text-shadow: black 0px 0px 7px;
 }
 
 .blurred-content .pure-button {
@@ -329,8 +329,8 @@ a.back-to-top,
 }
 
 .blurred-content p {
-  color: #e4e4e4;
-  text-shadow: #3b413c 0px 0px 7px;
+  color: white;
+  text-shadow: black 0px 0px 7px;
 }
 
 .blurred-content .pure-button {
@@ -422,8 +422,8 @@ a.back-to-top,
 }
 
 .blurred-content p {
-  color: #e4e4e4;
-  text-shadow: #3b413c 0px 0px 7px;
+  color: white;
+  text-shadow: black 0px 0px 7px;
 }
 
 .blurred-content .pure-button {
@@ -592,7 +592,11 @@ img.side-bar-image {
 }
 
 .home-bottom a {
-  margin: 20px;
+  width: 70%;
+}
+
+.home-bottom i {
+  margin-top: 50px;
 }
 
 .home-features > .pure-button {
@@ -1337,7 +1341,7 @@ i.fa-globe {
 
 .wiki-list-row td {
   font-size: 1.2em;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
 }
 
 @media screen and (max-width: 48em) {
@@ -1382,7 +1386,7 @@ i.fa-globe {
   background-attachment: fixed;
   background-size: cover;
   background-position: top;
-  background-image: url(https://images.unsplash.com/photo-1503293317069-f8ea8304b4f9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=01398ed1d22b64d780f90d6106a93202&auto=format&fit=crop&w=1950&q=80);
+  background-image: url(https://images.unsplash.com/photo-1495808985667-ba4ce2ef31b3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8fb9091f3f7760635761f985d12b333d&auto=format&fit=crop&w=1950&q=80);
   position: fixed;
   top: 0;
   left: 0;
