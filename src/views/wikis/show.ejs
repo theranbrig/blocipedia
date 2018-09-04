@@ -21,7 +21,7 @@
 							</div>
 						<div class="pure-u-1 wiki-content">
 							<div class="pure-u-1 pure-u-md-16-24 offset-md-1-24 main-content">
-								<h3><%= wiki.body %></h3>
+								<h4><%= wiki.body %> </h4>
 
 								<p>Lorem ipsum dolor amet distillery hashtag franzen, marfa pickled banh mi chartreuse. Migas fanny pack green juice flexitarian gastropub helvetica synth post-ironic pickled hammock typewriter pok pok ennui. Master cleanse wolf pickled, squid occupy hammock gastropub flexitarian bicycle rights plaid. Air plant normcore banjo chartreuse lyft, vaporware shoreditch artisan af distillery kombucha blue bottle live-edge yuccie YOLO.</p>
 
@@ -70,12 +70,6 @@
 									<li><a href='#1'>Seedlings</a></li>
 								</ul>
 								<a class="back-to-top"href='#top-image'>Back to top</a>
-								<div>
-									<form action='/wikis/<%= wiki.id %>/destroy' method="POST">
-									  <button type="submit"class="pure-button pure-input-2-3 pure-button-error">Delete Wiki</button>
-									</form>
-									  <a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-input-2-3 pure-button-error">Edit Wiki</a>
-								</div>
 							</div>
 							<div class="pure-u-1 pure-u-md-6-24 side-content">
 								<% if (!wiki.image1) { %>
@@ -104,6 +98,20 @@
 										</li>
 									</ul>
 								</div>
+								<div class="user-edit">
+									<a class="user-link" href="#">Created by: <%= wiki.User.username %> </a>
+									<% if (currentUser) { %>
+										<% if (currentUser.id === wiki.userId || currentUser.isAdmin()) { %>
+											<div class="user-buttons">
+												<a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-button-primary">Edit Wiki</a>
+												<form action='/wikis/<%= wiki.id %>/destroy' method="POST">
+													<button type="submit"class="pure-button pure-button-primary">Delete Wiki</button>
+												</form>
+											</div>
+										<% } %>
+									<% } %>
+								</div>
+
 							</div>
 						</div>
 					</div>

@@ -76,6 +76,18 @@ a.back-to-top,
   color: #fefefe !important;
 }
 
+a.user-link {
+  color: #809f9b;
+}
+
+a.user-link:hover {
+  color: #668682;
+}
+
+.user-edit {
+  background-color: #daf0ee;
+}
+
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -159,6 +171,18 @@ a.back-to-top,
 .wiki-list-head {
   background-color: #9db5b2 !important;
   color: #fefefe !important;
+}
+
+a.user-link {
+  color: #809f9b;
+}
+
+a.user-link:hover {
+  color: #668682;
+}
+
+.user-edit {
+  background-color: #daf0ee;
 }
 
 .hamburger {
@@ -346,6 +370,18 @@ a.back-to-top,
   color: #fefefe !important;
 }
 
+a.user-link {
+  color: #809f9b;
+}
+
+a.user-link:hover {
+  color: #668682;
+}
+
+.user-edit {
+  background-color: #daf0ee;
+}
+
 .pure-menu-heading {
   background-color: #9db5b2 !important;
   color: white !important;
@@ -437,6 +473,18 @@ a.back-to-top,
 .wiki-list-head {
   background-color: #9db5b2 !important;
   color: #fefefe !important;
+}
+
+a.user-link {
+  color: #809f9b;
+}
+
+a.user-link:hover {
+  color: #668682;
+}
+
+.user-edit {
+  background-color: #daf0ee;
 }
 
 .title-bar-left {
@@ -581,6 +629,19 @@ img.side-bar-image {
   padding: 0 !important;
 }
 
+div.user-buttons {
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.user-buttons a,
+.user-buttons button {
+  margin: 7px 0;
+  padding: 8px 0;
+  width: 80%;
+}
+
 .blurred-content h1 {
   margin-bottom: 15px;
 }
@@ -633,6 +694,10 @@ img.side-bar-image {
 
 .browse-wiki {
   text-align: center;
+}
+
+.user-edit {
+  padding: 15px 0;
 }
 
 /*
@@ -1343,6 +1408,11 @@ i.fa-globe {
 .wiki-list-row td {
   font-size: 1.1em;
   letter-spacing: 0.13em;
+}
+
+a.user-link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 48em) {

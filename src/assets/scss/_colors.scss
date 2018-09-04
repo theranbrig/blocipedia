@@ -82,3 +82,15 @@ a.back-to-top,
 	background-color: $cambridge-blue !important;
 	color: lighten($white, 10%) !important;
 }
+
+a.user-link {
+	color: darken($cambridge-blue, 10%);
+}
+
+a.user-link:hover {
+	color: darken($cambridge-blue, 20%);
+}
+
+.user-edit {
+	background-color: $azureish-white;
+}

@@ -13,6 +13,7 @@
       <div class="title-bar-left"></div>
         <div class="browse-wiki">
           <h1>Browse Wikis</h1>
+          <% include ../static/partials/messages.ejs %>
           <% if (currentUser) { %>
             <p>Start browsing.  Click on a wiki to explore, edit, or create your own.</p>
             <a href="wikis/new" class="pure-button pure-button-primary">Create Your Own Wiki</a>

@@ -144,6 +144,19 @@ img.side-bar-image {
 	padding: 0 !important;
 }
 
+div.user-buttons {
+	width: 80%;
+	margin-left: 10%;
+	text-align: center;
+}
+
+.user-buttons a,
+.user-buttons button {
+	margin: 7px 0;
+	padding: 8px 0;
+	width: 80%;
+}
+
 .blurred-content h1 {
 	margin-bottom: 15px;
 }
@@ -196,6 +209,10 @@ img.side-bar-image {
 
 .browse-wiki {
 	text-align: center;
+}
+
+.user-edit {
+	padding: 15px 0;
 }
 
 /*

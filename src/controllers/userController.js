@@ -33,7 +33,7 @@ module.exports = {
 						'notice',
 						"You've successfully signed up for Blocipedia! Check your email for more information."
 					);
-					res.redirect('/');
+					res.redirect('/wikis');
 				});
 			}
 		});
@@ -48,7 +48,7 @@ module.exports = {
 				res.redirect('/users/sign_in');
 			} else {
 				req.flash('notice', "You've successfully signed in!");
-				res.redirect('/');
+				res.redirect('/wikis');
 			}
 		});
 	},
