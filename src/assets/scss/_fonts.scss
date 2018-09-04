@@ -128,7 +128,7 @@ i.fa-globe {
 .wiki-list-head th {
 	font-family: $main-font;
 	font-weight: 300;
-	font-size: 1.4em;
+	font-size: 1.3em;
 }
 
 .wiki-list-row {
@@ -140,7 +140,7 @@ i.fa-globe {
 }
 
 .wiki-list-row td {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	letter-spacing: 0.13em;
 }
 
@@ -161,5 +161,23 @@ i.fa-globe {
 
 	.sign-up-form h1 {
 		font-size: 2.5em;
+	}
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.wiki-list-head th {
+		font-family: $main-font;
+		font-weight: 300;
+		font-size: 1em;
+	}
+
+	.wiki-list-row td {
+		font-size: 0.9em;
+		letter-spacing: 0.13em;
 	}
 }
