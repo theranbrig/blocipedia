@@ -61,14 +61,13 @@ a.back-to-top,
 .blurred-content h1,
 .blurred-content i,
 .blurred-content h3 {
-	color: darken($azureish-white, 10%);
+	color: darken($azureish-white, 15%);
 	text-shadow: $black-olive 0px 0px 10px;
 }
 
 .blurred-content p {
 	color: lighten($azureish-white, 15%);
-	text-shadow: darken($black-olive, 30%) 0px 0px 7px;
-	
+	text-shadow: darken($black-olive, 20%) 0px 0px 7px;
 }
 
 .blurred-content .pure-button {
