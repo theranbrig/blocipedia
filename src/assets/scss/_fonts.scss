@@ -95,18 +95,11 @@ a.back-to-top,
 	font-weight: 300;
 }
 
-.home-bottom h3 {
+.features-list h3 {
 	font-family: $main-font;
 	font-size: 1.5em;
 	font-weight: 300;
-}
-
-.blurred-content i {
-	font-size: 3em;
-}
-
-.blurred-content p {
-	font-weight: 300;
+	text-align: center;
 }
 
 .pure-button-primary {
@@ -115,6 +108,10 @@ a.back-to-top,
 
 i.fa-globe {
 	font-size: 4em;
+}
+
+.features-list i {
+	font-size: 3em;
 }
 
 .features-list p {

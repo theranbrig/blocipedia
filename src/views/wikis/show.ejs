@@ -101,14 +101,12 @@
 								<div class="user-edit">
 									<a class="user-link" href="#">Created by: <%= wiki.User.username %> </a>
 									<% if (currentUser) { %>
-										<% if (currentUser.id === wiki.userId || currentUser.isAdmin()) { %>
-											<div class="user-buttons">
-												<a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-button-primary">Edit Wiki</a>
-												<form action='/wikis/<%= wiki.id %>/destroy' method="POST">
-													<button type="submit"class="pure-button pure-button-primary">Delete Wiki</button>
-												</form>
-											</div>
-										<% } %>
+										<div class="user-buttons">
+											<a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-button-primary">Edit Wiki</a>
+											<form action='/wikis/<%= wiki.id %>/destroy' method="POST">
+												<button type="submit"class="pure-button pure-button-primary">Delete Wiki</button>
+											</form>
+										</div>
 									<% } %>
 								</div>
 

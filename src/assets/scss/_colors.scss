@@ -70,10 +70,6 @@ a.back-to-top,
 	text-shadow: darken($black-olive, 20%) 0px 0px 7px;
 }
 
-.blurred-content .pure-button {
-	color: $black-olive;
-}
-
 .wiki-list-row a {
 	color: darken($cambridge-blue, 15%);
 }
@@ -93,4 +89,13 @@ a.user-link:hover {
 
 .user-edit {
 	background-color: $azureish-white;
+}
+
+.title-example-main img {
+	border: 1px $cambridge-blue solid;
+}
+
+.home-title i,
+.features-list i {
+	color: $cambridge-blue;
 }

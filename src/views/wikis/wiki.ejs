@@ -12,13 +12,13 @@
     <div class="pure-u-1">
       <div class="title-bar-left"></div>
         <div class="browse-wiki">
-          <h1>Browse Wikis</h1>
+          <h1>Browse Recent Wikis</h1>
           <% include ../static/partials/messages.ejs %>
           <% if (currentUser) { %>
-            <p>Start browsing.  Click on a wiki to explore, edit, or create your own.</p>
+            <p>Start browsing our most recently created wikis.  Click on a wiki to explore, edit, or create your own.</p>
             <a href="wikis/new" class="pure-button pure-button-primary">Create Your Own Wiki</a>
           <% } else { %>
-            <p>Look through the content below and start exploring.  If you don't see what you are looking for, add it yourself and create a new wiki.  Sign up to start sharing today.</p>
+            <p>Look through the our most recent wikis below and start exploring.  If you don't see what you are looking for, join Blocipedia for free, and create a new wiki.  Sign up to start sharing today.</p>
             <a href="users/sign_up" class="pure-button pure-button-primary">Sign Up</a>
             <a href="users/sign_in" class="pure-button pure-button-primary">Sign In</a>
           <% } %>
