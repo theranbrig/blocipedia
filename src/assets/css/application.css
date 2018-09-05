@@ -699,8 +699,8 @@ div.user-buttons {
 
 .features-list {
   text-align: center;
-  margin-top: 60px;
-  margin-bottom: 120px;
+  margin-top: 40px;
+  margin-bottom: 80px;
 }
 
 .title-example-main {
@@ -934,6 +934,10 @@ a.user-link {
   .wiki-list-row td {
     font-size: 0.9em;
     letter-spacing: 0.13em;
+  }
+
+  .home-title h1 {
+    font-size: 3em;
   }
 }
 .closebtn {
