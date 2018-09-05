@@ -166,9 +166,10 @@ div.user-buttons {
 }
 
 .home-title img {
-	height: 200px;
+	height: 256px;
 	width: 100%;
 	margin: 20px 0;
+	object-fit: cover;
 }
 
 .home-title {
@@ -207,6 +208,10 @@ div.user-buttons {
 .title-example-main h2,
 .title-example-main img {
 	width: 90%;
+}
+
+.title-example-main img {
+	padding: 4px;
 }
 
 .title-example-main h2 {
