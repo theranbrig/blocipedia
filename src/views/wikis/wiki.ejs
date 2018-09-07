@@ -16,6 +16,9 @@
           <% include ../static/partials/messages.ejs %>
           <% if (currentUser) { %>
             <p>Start browsing our most recently created wikis.  Click on a wiki to explore, edit, or create your own.</p>
+            <% if (currentUser.role == 0) { %>
+              <% include ../static/partials/upgrade_form.ejs %>
+            <% } %>
             <a href="wikis/new" class="pure-button pure-button-primary">Create Your Own Wiki</a>
           <% } else { %>
             <p>Look through the our most recent wikis below and start exploring.  If you don't see what you are looking for, join Blocipedia for free, and create a new wiki.  Sign up to start sharing today.</p>

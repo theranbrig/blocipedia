@@ -8,6 +8,7 @@ for (let i = 1; i < 15; i++) {
 		email: faker.internet.exampleEmail(),
 		password: faker.internet.password(),
 		username: faker.internet.userName(),
+		role: 0,
 		createdAt: new Date(),
 		updatedAt: new Date()
 	});
