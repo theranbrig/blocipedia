@@ -12,9 +12,9 @@
     <div class="pure-u-1">
       <div class="title-bar-left"></div>
         <div class="sign-up-form">
-          <h1>Create a New Wiki</h1>
-          <h2>Add to Blocipedia</h2>
-          <p>Create a new Wiki below by adding a title and brief description of the subject.</p>
+          <h1>Edit <%= wiki.title %> Wiki</h1>
+          <h2>Update Information</h2>
+          <p>Add to the <%= wiki.title %> Wiki by sharing your knowledge and experiences with others. </p>
           <div>
             <% include ../static/partials/messages.ejs %>
             <form method="POST" action="/wikis/<%= wiki.id %>/update" class="pure-form">

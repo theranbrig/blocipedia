@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+  <% include ../static/partials/head.ejs %>
+
+</head>
+
+<body>
+
+  <div id="layout">
+    <% include ../static/partials/navbar.ejs %>
+    <div class="pure-g">
+    <div class="pure-u-1">
+      <div class="title-bar-left"></div>
+        <div class="pure-u-1 user-page">
+          <h1>User: <%= user.username %></h1>
+          <% include ../static/partials/messages.ejs %>
+          <% if (currentUser) { %>
+            <% if (currentUser.id = user.id && currentUser.role == 1) { %>
+              <h2>Premium User</h2>
+              <% include ../static/partials/downgrade.ejs %>
+            <% } else { %>
+              <h2>Standard Member</h2>
+              <% include ../static/partials/upgrade_form.ejs %>
+            <% } %>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ../static/partials/bodyscripts.ejs %>
+</body>

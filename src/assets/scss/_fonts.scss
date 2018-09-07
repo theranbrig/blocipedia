@@ -143,6 +143,11 @@ a.user-link {
 	font-size: 1.2em;
 }
 
+.stripe-button-el,
+.stripe-button-el > span {
+	font-family: $second-font !important;
+}
+
 // Tablet View
 
 @media screen and (max-width: 48em) {

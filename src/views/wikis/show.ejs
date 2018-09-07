@@ -20,20 +20,22 @@
 								<h1><%= wiki.title %></h1>
 							</div>
 						<div class="pure-u-1 wiki-content">
-							<div class="pure-u-1 pure-u-md-16-24 offset-md-1-24 main-content">
+							<div class="pure-u-1 pure-u-lg-2-3 main-content">
 								<h4><%= wiki.body %> </h4>
 
 								<p>Lorem ipsum dolor amet distillery hashtag franzen, marfa pickled banh mi chartreuse. Migas fanny pack green juice flexitarian gastropub helvetica synth post-ironic pickled hammock typewriter pok pok ennui. Master cleanse wolf pickled, squid occupy hammock gastropub flexitarian bicycle rights plaid. Air plant normcore banjo chartreuse lyft, vaporware shoreditch artisan af distillery kombucha blue bottle live-edge yuccie YOLO.</p>
 
-								<h4>Menu</h4>
-								<ul>
-									<li><a href="#about">About</a></li>
-									<li><a href="#taxonomy">Taxonomy</a></li>
-									<li><a href="#uses">Uses</a></li>
-									<li><a href="#history">History</a></li>
-									<li><a href="#pop">Pop Culture</a></li>
-									<li><a href="#sources">Sources</a></li>
-								</ul>
+								<div class="wiki-menu">
+									<h4>Menu</h4>
+									<ul>
+										<li><a href="#about">About</a></li>
+										<li><a href="#taxonomy">Taxonomy</a></li>
+										<li><a href="#uses">Uses</a></li>
+										<li><a href="#history">History</a></li>
+										<li><a href="#pop">Pop Culture</a></li>
+										<li><a href="#sources">Sources</a></li>
+									</ul>
+								</div>
 
 								<h4 id='about'>About</h4>
 
@@ -69,9 +71,9 @@
 									<li><a href='#1'>Bending Branches</a></li>
 									<li><a href='#1'>Seedlings</a></li>
 								</ul>
-								<a class="back-to-top"href='#top-image'>Back to top</a>
+
 							</div>
-							<div class="pure-u-1 pure-u-md-6-24 side-content">
+							<div class="pure-u-1 pure-u-lg-7-24 side-content">
 								<% if (!wiki.image1) { %>
 									<img class="side-bar-image" src="https://images.unsplash.com/photo-1503442862980-50ccb3f1d085?ixlib=rb-0.3.5&s=4fd204e0b6d85fa52d6ecc73da1e98e7" alt="you are here placeholder"/>
 								<% } else { %>
@@ -99,7 +101,7 @@
 									</ul>
 								</div>
 								<div class="user-edit">
-									<a class="user-link" href="#">Created by: <%= wiki.User.username %> </a>
+									<a class="user-link" href="/users/<%= wiki.User.id %> ">Created by: <%= wiki.User.username %> </a>
 									<% if (currentUser) { %>
 										<div class="user-buttons">
 											<a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-button-primary">Edit Wiki</a>
@@ -109,8 +111,10 @@
 										</div>
 									<% } %>
 								</div>
-
 							</div>
+							<footer>
+								<a class="back-to-top"href='#top-image'>Back to top</a>
+							</footer>
 						</div>
 					</div>
 			</div>

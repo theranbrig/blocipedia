@@ -4,6 +4,7 @@ $cambridge-blue: #9db5b2;
 $azureish-white: #daf0ee;
 $pearl-aqua: #94d1be;
 $text-color: #131313;
+$button-orange: #eb9e2c;
 
 .pure-button,
 .pure-button-selected,
@@ -92,10 +93,35 @@ a.user-link:hover {
 }
 
 .title-example-main img {
-	border: 1px $cambridge-blue solid;
+	border: 2px $cambridge-blue solid;
+	border-radius: 5px;
 }
 
 .home-title i,
 .features-list i {
 	color: $cambridge-blue;
+}
+
+.feature-item {
+	border: 2px solid $cambridge-blue;
+	border-radius: 5px;
+}
+
+// Upgrade form styling
+.upgrade-form {
+	border: 2px solid $cambridge-blue;
+	border-radius: 5px;
+}
+
+.stripe-button-el,
+.stripe-button-el > span {
+	border-top: none !important;
+	background-color: $button-orange !important;
+	background-image: none !important;
+	border-radius: 3px !important;
+	box-shadow: none !important;
+}
+
+.stripe-button-el:hover {
+	border: 1px solid $button-orange !important;
 }

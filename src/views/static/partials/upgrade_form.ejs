@@ -1,0 +1,26 @@
+
+
+    <% if (currentUser) { %>
+      <% if (currentUser.role == 0) { %>
+        <main class="upgrade-form">
+          <h2>Upgrade Now</h2>
+            <ul>
+              <li>Create unlimited private Wikis</li>
+              <li>Control who collaborates on your Wikis</li>
+              <li>More to come...</li>
+            </ul>
+          <form action="/users/<%= currentUser.id %>/upgrade" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_lbxXvcYXX2J1PsUyFw9bIPT7"
+              data-amount="1500"
+              data-name="Blocipedia"
+              data-description="Premium Membership"
+              data-locale="auto">
+            </script>
+          </form>
+        </main>
+      <% } %>
+    <% } %>
+
+
