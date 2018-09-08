@@ -38,7 +38,21 @@
                 <tbody>
                   <% wikis.forEach(wiki => { %>
                     <tr class="wiki-list-row">
-                      <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><%= wiki.title %></a></td>
+                      <% if (currentUser) { %>
+                        <% if (wiki.private && currentUser.role == 0) { %>
+                          <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><i class="fas fa-lock"></i><%= wiki.title %></a></td>
+                        <% } else if (wiki.private && currentUser.role == 1 || wiki.userId == currentUser.id) { %>
+                          <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><i class="fas fa-lock-open"></i><%= wiki.title %></a></td>
+                        <% } else { %>
+                          <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><%= wiki.title %></a></td>
+                        <% } %>
+                      <% } else { %>
+                        <% if (wiki.private) { %>
+                          <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><i class="fas fa-lock"></i><%= wiki.title %></a></td>
+                        <% } else { %>
+                          <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><%= wiki.title %></a></td>
+                        <% } %>
+                      <% } %>
                       <td class="wiki-list-row-body"><%= wiki.body %> </td>
                       <td class="wiki-list-row-date"><%= wiki.updatedAt.toDateString().slice(4, 15) %> </td>
                     </tr>

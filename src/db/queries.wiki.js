@@ -49,7 +49,6 @@ module.exports = {
 						callback(null, wiki);
 					});
 				} else {
-					req.flash('notice', 'You are not authorized to do that.');
 					callback(401);
 				}
 			})
@@ -62,7 +61,6 @@ module.exports = {
 			if (!wiki) {
 				return callback('Wiki not found');
 			}
-
 			const authorized = new Authorizer(req.user, wiki).update();
 			if (authorized) {
 				wiki
@@ -80,5 +78,20 @@ module.exports = {
 				callback('Forbidden');
 			}
 		});
+	},
+	
+	publicWikis(id) {
+		return Wiki.all()
+			.then(wikis => {
+				wikis.forEach(wiki => {
+					if (wiki.userId == id && wiki.private) {
+						wiki.update({ private: false });
+					}
+				});
+				callback(null, wiki);
+			})
+			.catch(err => {
+				callback(err);
+			});
 	}
 };

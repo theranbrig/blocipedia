@@ -103,15 +103,22 @@
 								<div class="user-edit">
 									<a class="user-link" href="/users/<%= wiki.User.id %> ">Created by: <%= wiki.User.username %> </a>
 									<% if (currentUser) { %>
-										<div class="user-buttons">
-											<a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-button-primary">Edit Wiki</a>
-											<form action='/wikis/<%= wiki.id %>/destroy' method="POST">
-												<button type="submit"class="pure-button pure-button-primary">Delete Wiki</button>
-											</form>
-										</div>
+										<% if (wiki.private && currentUser.role == 0) { %>
+											<p>You are not allowed to edit this wiki.</p>
+										<% } else { %>
+											<div class="user-buttons">
+												<a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-button-primary">Edit Wiki</a>
+												<% if (currentUser.role != 0 || wiki.User.id == currentUser.id) { %>
+													<form action='/wikis/<%= wiki.id %>/destroy' method="POST">
+														<button type="submit"class="pure-button pure-button-primary">Delete Wiki</button>
+													</form>
+												<% } %>
+											</div>
+										<% } %>
 									<% } %>
 								</div>
 							</div>
+							<% include ../static/partials/messages.ejs %>
 							<footer>
 								<a class="back-to-top"href='#top-image'>Back to top</a>
 							</footer>

@@ -21,6 +21,7 @@ module.exports = {
 		}
 	},
 	create(req, res, next) {
+		const premium = new authorizer(req.user).premium();
 		const authorized = new authorizer(req.user).new();
 		if (authorized) {
 			let newWiki = {
@@ -31,6 +32,10 @@ module.exports = {
 				image2: req.body.image2,
 				userId: req.user.id
 			};
+			if (newWiki.private && !premium) {
+				req.flash('notice', 'You must be a premium user to create a Private Wiki');
+				res.redirect('/wikis/new');
+			}
 			wikiQueries.addWiki(newWiki, (err, wiki) => {
 				if (err) {
 					res.redirect(500, '/wikis/new');
@@ -44,11 +49,17 @@ module.exports = {
 		}
 	},
 	show(req, res, next) {
+		const premium = new authorizer(req.user).premium();
 		wikiQueries.getWiki(req.params.id, (err, wiki) => {
 			if (err || wiki == null) {
 				res.redirect(404, '/');
 			} else {
-				res.render('wikis/show', { wiki });
+				if ((wiki.private && premium) || !wiki.private) {
+					res.render('wikis/show', { wiki });
+				} else {
+					req.flash('notice', 'You must be a Premium Member to view that Wiki.');
+					res.redirect('/wikis');
+				}
 			}
 		});
 	},
@@ -66,8 +77,9 @@ module.exports = {
 			if (err || wiki == null) {
 				res.redirect(404, '/');
 			} else {
+				const premium = new authorizer(req.user, wiki).premium();
 				const authorized = new authorizer(req.user, wiki).edit();
-				if (authorized) {
+				if (authorized || (wiki.private && premium)) {
 					res.render('wikis/edit', { wiki });
 				} else {
 					req.flash('notice', 'You are not authorized to do that.');
@@ -79,10 +91,10 @@ module.exports = {
 	update(req, res, next) {
 		wikiQueries.updateWiki(req, req.body, (err, wiki) => {
 			if (err || wiki == null) {
-				req.flash('notice', 'Oops. Something went wrong with your payment');
-				res.redirect(404, `/wikis/${req.params.id}/edit`);
+				req.flash('notice', 'Oops. Something went wrong with your edit.');
+				res.redirect(404, `/wikis/${req.params.id}`);
 			} else {
-				req.flash('notice', 'You upgraded to a Premium Account.');
+				req.flash('notice', `You updated the ${wiki.title} Wiki.`);
 				res.redirect(301, `/wikis/${req.params.id}`);
 			}
 		});

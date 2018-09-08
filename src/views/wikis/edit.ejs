@@ -24,10 +24,13 @@
                 <input type="text" name="image1" value="<%= wiki.image1 %>" placeholder="Enter Main Picture URL" class="pure-input-2-3"/>
                 <input type="text" name="image2" value="<%= wiki.image2 %>" placeholder="Enter Side Picture URL" class="pure-input-2-3"/>
                 </fieldset>
-                <label for="private" class="pure-checkbox">
-                  <input id="private" type="checkbox" value="true">
-                  Make Wiki Private?
-                </label>
+                <% if (currentUser.role == 1 || currentUser.role == 2) { %>
+                  <label for="private">Choose Wiki Privacy</label>
+                    <select class="pure-input-2-3" name="private">
+                      <option value="false">Public Wiki</option>
+                      <option value="true">Private Wiki</option>
+                    </select>
+                <% } %>
               <button type="submit"class="pure-button pure-input-2-3 pure-button-primary">Edit Wiki</button>
             </form>
           </div>

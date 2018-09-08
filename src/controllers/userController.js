@@ -1,4 +1,5 @@
 const userQueries = require('../db/queries.users.js');
+const wikiQueries = require('../db/queries.wiki.js');
 const passport = require('passport');
 const sgMail = require('@sendgrid/mail');
 const stripe = require('stripe')(process.env.STRIPE_API_KEY);
@@ -78,8 +79,7 @@ module.exports = {
 	upgradeUser(req, res, next) {
 		User.findById(req.params.id)
 			.then(user => {
-				var stripeToken = req.body.stripeToken;
-				// Charge the user's card:
+				const stripeToken = req.body.stripeToken;
 				stripe.charges.create(
 					{
 						amount: 1500,
@@ -101,14 +101,24 @@ module.exports = {
 	},
 
 	downgradeUser(req, res, next) {
-		userQueries.downgrade(req.params.id, (err, user) => {
-			if (err) {
-				req.flash('notice', 'Something went wrong.  Please try again.');
-				res.redirect(`/users/${user.id}`);
-			} else {
-				req.flash('notice', 'Sorry to see you go.  You are now a Standard Member.');
-				res.redirect(`/users/${user.id}`);
-			}
-		});
+		const stripeToken = req.body.stripeToken;
+		stripe.refunds.create(
+			{
+				amount: 1000,
+				currency: 'usd',
+				description: 'Refund from Premium Membership',
+				source: stripeToken
+			},
+			wikiQueries.publicWikis(req.params.id),
+			userQueries.downgrade(req.params.id, (err, user) => {
+				if (err) {
+					req.flash('notice', 'Something went wrong.  Please try again.');
+					res.redirect(`/users/${user.id}`);
+				} else {
+					req.flash('notice', 'Sorry to see you go.  You should recieve your refund shortly.');
+					res.redirect(301, `/users/${user.id}`);
+				}
+			})
+		);
 	}
 };

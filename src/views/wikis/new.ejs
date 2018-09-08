@@ -13,7 +13,7 @@
       <div class="title-bar-left"></div>
         <div class="sign-up-form">
           <h1>Create a New Wiki</h1>
-          <h2>Add to Blocipedia</h2>
+          <h2>Hey <%= currentUser.username %>! Start adding to Blocipedia</h2>
           <p>Create a new Wiki below by adding a title and brief description of the subject.</p>
           <div>
             <% include ../static/partials/messages.ejs %>
@@ -24,10 +24,13 @@
                 <input type="text" name="image1" placeholder="Enter Main Picture URL" class="pure-input-2-3"/>
                 <input type="text" name="image2" placeholder="Enter Side Picture URL" class="pure-input-2-3"/>
                 </fieldset>
-                <label for="private" class="pure-checkbox">
-                  <input id="private" type="checkbox" value="true">
-                  Create Private Wiki?
-                </label>
+                <% if (currentUser.role == 1 || currentUser.role == 2) { %>
+                  <label for="private">Choose Wiki Privacy</label>
+                    <select class="pure-input-2-3" name="private">
+                      <option value="false">Public Wiki</option>
+                      <option value="true">Private Wiki</option>
+                    </select>
+                <% } %>
               <button type="submit"class="pure-button pure-input-2-3 pure-button-primary">Create Wiki</button>
             </form>
           </div>
