@@ -17,6 +17,7 @@ module.exports = {
 			title: newWiki.title,
 			body: newWiki.body,
 			private: newWiki.private,
+			fastFacts: newWiki.fastFacts,
 			image1: newWiki.image1,
 			image2: newWiki.image2,
 			userId: newWiki.userId
@@ -79,7 +80,7 @@ module.exports = {
 			}
 		});
 	},
-	
+
 	publicWikis(id) {
 		return Wiki.all()
 			.then(wikis => {

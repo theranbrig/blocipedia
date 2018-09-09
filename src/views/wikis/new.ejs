@@ -18,12 +18,20 @@
           <div>
             <% include ../static/partials/messages.ejs %>
             <form method="POST" action="/wikis/create" class="pure-form">
+              <label for="title">Title and Photo URLs</label>
               <fieldset class="pure-group">
                 <input type="text" name="title" placeholder="Enter Wiki Title" class="pure-input-2-3" />
-                <input type="text" name="body" placeholder="Enter Brief Description" class="pure-input-2-3"/>
                 <input type="text" name="image1" placeholder="Enter Main Picture URL" class="pure-input-2-3"/>
                 <input type="text" name="image2" placeholder="Enter Side Picture URL" class="pure-input-2-3"/>
-                </fieldset>
+              </fieldset>
+              <label for="body">Main Wiki Information</label>
+              <fieldset>
+                <textarea name="body" class="pure-input-2-3" placeholder="Enter Body of Wiki" rows="20"></textarea>
+              </fieldset>
+              <label for="fastFacts">Fast Fact Information</label>
+              <fieldset>
+                <textarea name="fastFacts" class="pure-input-2-3" placeholder="Enter Fast Facts" rows="10"></textarea>
+              </fieldset>
                 <% if (currentUser.role == 1 || currentUser.role == 2) { %>
                   <label for="private">Choose Wiki Privacy</label>
                     <select class="pure-input-2-3" name="private">
@@ -35,9 +43,9 @@
             </form>
           </div>
           <div class="form-bottom-links">
-            <a href="/users/sign_up">Not yet a member?</a>
-            <a href="#">Read more on how to contribute.</a>
+            <a href="#">Read our detailed Wiki Guide, and be sure to check out the Quick Wiki Guide below.</a>
           </div>
+          <% include ../static/partials/wiki_guide.ejs %> 
         </div>
       </div>
     </div>

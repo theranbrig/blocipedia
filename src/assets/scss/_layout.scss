@@ -289,6 +289,7 @@ div.user-buttons {
 }
 
 // Upgrade Form
+
 .upgrade-form {
 	text-align: center;
 	width: 350px;
@@ -323,6 +324,29 @@ div.user-buttons {
 	margin-left: 2.5%;
 }
 
+// Wiki Guide Styling
+
+.wiki-guide .alert {
+	width: 66%;
+}
+
+.alert ul {
+	padding: 0
+}
+
+.alert ul>li {
+	width: 80%;
+	margin: 5px 10%;
+	list-style-type: square;
+	text-align: left; 
+}
+
+.wiki-guide h4 {
+	text-align: center;
+}
+
+
+
 @media screen and (max-width: 767px) {
 	div.title-bar-right {
 		height: 0 !important;
@@ -333,10 +357,4 @@ div.user-buttons {
 	.features-list p {
 		width: 50% !important;
 	}
-}
-
-// Wiki main content offset
-.offset-md-1-24 {
-	margin-left: 4.17%;
-	*margin-left: 4.165%;
 }

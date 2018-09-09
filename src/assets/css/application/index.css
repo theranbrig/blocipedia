@@ -23,7 +23,8 @@ a.pure-button-primary:hover {
   color: #668682;
 }
 
-.pure-form .pure-group input:focus {
+.pure-form .pure-group input:focus,
+textarea:focus {
   border-color: #94d1be;
 }
 
@@ -36,9 +37,17 @@ a.pure-button-primary:hover {
   color: #131313;
 }
 
-.side-content h5,
+.side-content h1,
+.side-content h2,
 .side-content h3,
-.wiki-content h4 {
+.side-content h4,
+.side-content h5,
+.side-content h6,
+.wiki-content h2,
+.wiki-content h3,
+.wiki-content h4,
+.wiki-content h5,
+.wiki-content h6 {
   color: #719490;
 }
 
@@ -149,7 +158,8 @@ a.pure-button-primary:hover {
   color: #668682;
 }
 
-.pure-form .pure-group input:focus {
+.pure-form .pure-group input:focus,
+textarea:focus {
   border-color: #94d1be;
 }
 
@@ -162,9 +172,17 @@ a.pure-button-primary:hover {
   color: #131313;
 }
 
-.side-content h5,
+.side-content h1,
+.side-content h2,
 .side-content h3,
-.wiki-content h4 {
+.side-content h4,
+.side-content h5,
+.side-content h6,
+.wiki-content h2,
+.wiki-content h3,
+.wiki-content h4,
+.wiki-content h5,
+.wiki-content h6 {
   color: #719490;
 }
 
@@ -375,7 +393,8 @@ a.pure-button-primary:hover {
   color: #668682;
 }
 
-.pure-form .pure-group input:focus {
+.pure-form .pure-group input:focus,
+textarea:focus {
   border-color: #94d1be;
 }
 
@@ -388,9 +407,17 @@ a.pure-button-primary:hover {
   color: #131313;
 }
 
-.side-content h5,
+.side-content h1,
+.side-content h2,
 .side-content h3,
-.wiki-content h4 {
+.side-content h4,
+.side-content h5,
+.side-content h6,
+.wiki-content h2,
+.wiki-content h3,
+.wiki-content h4,
+.wiki-content h5,
+.wiki-content h6 {
   color: #719490;
 }
 
@@ -509,7 +536,8 @@ a.pure-button-primary:hover {
   color: #668682;
 }
 
-.pure-form .pure-group input:focus {
+.pure-form .pure-group input:focus,
+textarea:focus {
   border-color: #94d1be;
 }
 
@@ -522,9 +550,17 @@ a.pure-button-primary:hover {
   color: #131313;
 }
 
-.side-content h5,
+.side-content h1,
+.side-content h2,
 .side-content h3,
-.wiki-content h4 {
+.side-content h4,
+.side-content h5,
+.side-content h6,
+.wiki-content h2,
+.wiki-content h3,
+.wiki-content h4,
+.wiki-content h5,
+.wiki-content h6 {
   color: #719490;
 }
 
@@ -916,6 +952,25 @@ div.user-buttons {
   margin-left: 2.5%;
 }
 
+.wiki-guide .alert {
+  width: 66%;
+}
+
+.alert ul {
+  padding: 0;
+}
+
+.alert ul > li {
+  width: 80%;
+  margin: 5px 10%;
+  list-style-type: square;
+  text-align: left;
+}
+
+.wiki-guide h4 {
+  text-align: center;
+}
+
 @media screen and (max-width: 767px) {
   div.title-bar-right {
     height: 0 !important;
@@ -926,11 +981,6 @@ div.user-buttons {
     width: 50% !important;
   }
 }
-.offset-md-1-24 {
-  margin-left: 4.17%;
-  *margin-left: 4.165%;
-}
-
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 4em;
@@ -966,7 +1016,8 @@ p {
 
 input,
 form,
-select {
+select,
+textarea {
   font-family: "Raleway", sans-serif;
 }
 
@@ -986,29 +1037,48 @@ select {
 
 .main-content h1 {
   text-align: left;
+  font-size: 2em;
+  padding-left: 25px;
 }
 
-.side-content h4,
-.wiki-content h4 {
+.side-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.7em;
   font-weight: 300;
 }
 
-.side-content h5 {
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  text-align: left;
+  padding-left: 25px;
+}
+
+.side-content h2,
+.side-content h3,
+.side-content h4,
+.side-content h5,
+.side-content h6 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2em;
   font-weight: 300;
 }
 
 a.back-to-top,
-.wiki-content li a {
+.wiki-content li {
   font-family: "Montserrat", sans-serif;
   font-size: 1.4em;
   letter-spacing: 0.05em;
 }
 
-.side-content ul li p {
+.side-content p {
   font-size: 1.1em;
 }
 
@@ -1084,6 +1154,25 @@ a.user-link {
   margin: 0;
 }
 
+.alert li {
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.2em;
+}
+
+.wiki-guide > .alert > h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  margin-top: 30px;
+}
+
+.wiki-guide h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
 @media screen and (max-width: 48em) {
   .blurred-content h1 {
     font-size: 3em;
@@ -1142,4 +1231,4 @@ a.user-link {
   text-align: center;
 }
 
-/*# sourceMappingURL=application.css.map */
+/*# sourceMappingURL=index.css.map */

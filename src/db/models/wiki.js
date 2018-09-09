@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
 				allowNull: false
 			},
 			body: {
-				type: DataTypes.STRING,
+				type: DataTypes.TEXT,
 				allowNull: false
 			},
 			image1: {
@@ -16,6 +16,9 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			image2: {
 				type: DataTypes.STRING
+			},
+			fastFacts: {
+				type: DataTypes.TEXT
 			},
 			private: {
 				type: DataTypes.BOOLEAN,

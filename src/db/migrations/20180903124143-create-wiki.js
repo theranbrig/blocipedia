@@ -14,13 +14,16 @@ module.exports = {
 			},
 			body: {
 				allowNull: false,
-				type: Sequelize.STRING
+				type: Sequelize.TEXT
 			},
 			image1: {
 				type: Sequelize.STRING
 			},
 			image2: {
 				type: Sequelize.STRING
+			},
+			fastFacts: {
+				type: Sequelize.TEXT
 			},
 			private: {
 				allowNull: false,

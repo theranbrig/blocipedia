@@ -31,7 +31,8 @@ a.pure-button-primary:hover {
 	color: darken($cambridge-blue, 20%);
 }
 
-.pure-form .pure-group input:focus {
+.pure-form .pure-group input:focus,
+textarea:focus {
 	border-color: $pearl-aqua;
 }
 
@@ -44,9 +45,17 @@ a.pure-button-primary:hover {
 	color: $text-color;
 }
 
-.side-content h5,
+.side-content h1,
+.side-content h2,
 .side-content h3,
-.wiki-content h4 {
+.side-content h4,
+.side-content h5,
+.side-content h6,
+.wiki-content h2,
+.wiki-content h3,
+.wiki-content h4,
+.wiki-content h5,
+.wiki-content h6 {
 	color: darken($cambridge-blue, 15%);
 }
 

@@ -31,7 +31,6 @@
                 <thead class="wiki-list-head">
                   <tr>
                     <th class="wiki-list-head-title">Wiki</th>
-                    <th class="wiki-list-head-body">Description</th>
                     <th class="wiki-list-head-date">Last Update</th>
                   </tr>
                 </thead>
@@ -53,7 +52,6 @@
                           <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><%= wiki.title %></a></td>
                         <% } %>
                       <% } %>
-                      <td class="wiki-list-row-body"><%= wiki.body %> </td>
                       <td class="wiki-list-row-date"><%= wiki.updatedAt.toDateString().slice(4, 15) %> </td>
                     </tr>
                   <% }) %>

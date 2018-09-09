@@ -1,5 +1,6 @@
 const wikiQueries = require('../db/queries.wiki.js');
 const authorizer = require('../policies/wiki');
+const markdown = require('markdown').markdown;
 
 module.exports = {
 	index(req, res, next) {
@@ -28,6 +29,7 @@ module.exports = {
 				title: req.body.title,
 				body: req.body.body,
 				private: req.body.private,
+				fastFacts: req.body.fastFacts,
 				image1: req.body.image1,
 				image2: req.body.image2,
 				userId: req.user.id
@@ -50,12 +52,17 @@ module.exports = {
 	},
 	show(req, res, next) {
 		const premium = new authorizer(req.user).premium();
+
 		wikiQueries.getWiki(req.params.id, (err, wiki) => {
+			let wikiMarkdown = {
+				body: markdown.toHTML(wiki.body),
+				fastFacts: markdown.toHTML(wiki.fastFacts)
+			};
 			if (err || wiki == null) {
 				res.redirect(404, '/');
 			} else {
 				if ((wiki.private && premium) || !wiki.private) {
-					res.render('wikis/show', { wiki });
+					res.render('wikis/show', { wiki, wikiMarkdown });
 				} else {
 					req.flash('notice', 'You must be a Premium Member to view that Wiki.');
 					res.redirect('/wikis');
@@ -83,7 +90,7 @@ module.exports = {
 					res.render('wikis/edit', { wiki });
 				} else {
 					req.flash('notice', 'You are not authorized to do that.');
-					res.redirect(`/wikis/${req.params.id}`);
+					res.render(`/wikis/${req.params.id}`);
 				}
 			}
 		});
@@ -95,7 +102,7 @@ module.exports = {
 				res.redirect(404, `/wikis/${req.params.id}`);
 			} else {
 				req.flash('notice', `You updated the ${wiki.title} Wiki.`);
-				res.redirect(301, `/wikis/${req.params.id}`);
+				res.redirect(303, `/wikis/${req.params.id}`);
 			}
 		});
 	}

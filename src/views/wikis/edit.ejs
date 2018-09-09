@@ -18,17 +18,30 @@
           <div>
             <% include ../static/partials/messages.ejs %>
             <form method="POST" action="/wikis/<%= wiki.id %>/update" class="pure-form">
+              <label for="title">Title and Photo URLs</label>
               <fieldset class="pure-group">
                 <input type="text" name="title" value="<%= wiki.title %>" placeholder="Enter Wiki Title" class="pure-input-2-3" />
-                <input type="text" name="body" value="<%= wiki.body %>" placeholder="Enter Brief Description" class="pure-input-2-3"/>
                 <input type="text" name="image1" value="<%= wiki.image1 %>" placeholder="Enter Main Picture URL" class="pure-input-2-3"/>
                 <input type="text" name="image2" value="<%= wiki.image2 %>" placeholder="Enter Side Picture URL" class="pure-input-2-3"/>
-                </fieldset>
-                <% if (currentUser.role == 1 || currentUser.role == 2) { %>
+              </fieldset>
+              <label for="body">Main Wiki Information</label>
+              <fieldset class="pure-group">
+                <textarea class="pure-input-2-3" name="body" rows="20"><%= wiki.body %></textarea>
+              </fieldset>
+              <label for="fastFacts">Fast Fact Information</label>
+              <fieldset class="pure-group">
+                <textarea class="pure-input-2-3" name="fastFacts" rows="10"><%= wiki.fastFacts %></textarea>
+              </fieldset>
+                <% if (currentUser.role != 0) { %>
                   <label for="private">Choose Wiki Privacy</label>
                     <select class="pure-input-2-3" name="private">
-                      <option value="false">Public Wiki</option>
-                      <option value="true">Private Wiki</option>
+                      <% if (wiki.private) { %>
+                        <option value="true">Private Wiki</option>
+                        <option value="false">Public Wiki</option>
+                      <% } else { %>
+                        <option value="false">Public Wiki</option>
+                        <option value="true">Private Wiki</option>
+                      <% } %>
                     </select>
                 <% } %>
               <button type="submit"class="pure-button pure-input-2-3 pure-button-primary">Edit Wiki</button>
@@ -37,6 +50,7 @@
           <div class="form-bottom-links">
             <a href="#">See our guide on how to create a great wiki</a>
           </div>
+          <% include ../static/partials/wiki_guide.ejs %>
         </div>
       </div>
     </div>

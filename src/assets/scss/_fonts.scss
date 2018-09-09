@@ -36,7 +36,8 @@ p {
 
 input,
 form,
-select {
+select,
+textarea {
 	font-family: $second-font;
 }
 
@@ -56,29 +57,48 @@ select {
 
 .main-content h1 {
 	text-align: left;
+	font-size: 2em;
+	padding-left: 25px;
 }
 
-.side-content h4,
-.wiki-content h4 {
+.side-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
 	font-family: $main-font;
 	font-size: 1.7em;
 	font-weight: 300;
 }
 
-.side-content h5 {
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+	text-align: left;
+	padding-left: 25px;
+}
+
+.side-content h2,
+.side-content h3,
+.side-content h4,
+.side-content h5,
+.side-content h6 {
 	font-family: $main-font;
 	font-size: 1.2em;
 	font-weight: 300;
 }
 
 a.back-to-top,
-.wiki-content li a {
+.wiki-content li {
 	font-family: $main-font;
 	font-size: 1.4em;
 	letter-spacing: 0.05em;
 }
 
-.side-content ul li p {
+.side-content p {
 	font-size: 1.1em;
 }
 
@@ -154,6 +174,27 @@ a.user-link {
 	font-weight: 300;
 	font-size: 1.3em;
 	margin: 0;
+}
+
+// Wiki Guide
+
+.alert li {
+	font-family: $second-font;
+	letter-spacing: 0.1em;
+	font-size: 1em;
+	font-weight: 300;
+	line-height: 1.2em;
+}
+
+.wiki-guide>.alert>h3 {
+font-family: $main-font;
+font-weight: 300;
+margin-top: 30px;
+}
+
+.wiki-guide h4 {
+	font-family: $main-font;
+	font-weight: 300;
 }
 
 // Tablet View
