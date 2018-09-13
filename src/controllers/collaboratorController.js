@@ -37,7 +37,6 @@ module.exports = {
 				newCollaborator.wikiId,
 				newCollaborator.userId,
 				(err, collaboration) => {
-					console.log(collaboration.length);
 					if (collaboration.length === 0) {
 						collaboratorQueries.createCollaborator(newCollaborator, (err, collaborator) => {
 							if (err) {
@@ -83,7 +82,6 @@ module.exports = {
 		const authorized = new authorizer(req.user)._isPremium();
 		if (authorized) {
 			collaboratorQueries.deleteCollaborator(req.body.id, (err, collaborator) => {
-				console.log(req);
 				if (err) {
 					req.flash('notice', 'Something went wrong.');
 					res.redirect(500, `/wikis/${req.params.id}/edit`);

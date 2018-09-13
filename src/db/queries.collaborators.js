@@ -33,7 +33,6 @@ module.exports = {
 	getCollaborators(wikiId, callback) {
 		Collaborator.findAll({ where: { wikiId: wikiId } })
 			.then(collaborators => {
-				console.log(collaborators);
 				callback(null, collaborators);
 			})
 			.catch(err => {

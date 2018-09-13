@@ -8,9 +8,6 @@ module.exports = {
 	index(req, res, next) {
 		wikiQueries.getAllWikis((err, wikis) => {
 			collaboratorQueries.allCollaborations((err, collaborations) => {
-				collaborations.forEach(collab => {
-					console.log(collab.userId, collab.wikiId);
-				});
 				if (err) {
 					res.redirect(500, '/');
 				} else {
@@ -69,7 +66,6 @@ module.exports = {
 				body: markdown.toHTML(wiki.body),
 				fastFacts: markdown.toHTML(wiki.fastFacts)
 			};
-			console.log(wiki);
 			const collabAuth = collaborators.some(collab => {
 				if (req.user == null && wiki.private) {
 					return false;
@@ -77,9 +73,6 @@ module.exports = {
 					return collab.wikiId == wiki.id && collab.userId == req.user.id;
 				}
 			});
-
-			console.log(collabAuth);
-
 			if (err || wiki == null) {
 				res.redirect(404, '/');
 			} else {
