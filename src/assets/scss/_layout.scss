@@ -136,8 +136,9 @@ img.side-bar-image {
 	margin: 10px 0;
 }
 
-.side-content li p {
-	margin: 3px 0;
+.side-content p {
+	width: 90%;
+	margin: 7px 5% !important;
 }
 
 .side-content li {
@@ -163,6 +164,21 @@ div.user-buttons {
 	margin: 7px 0;
 	padding: 8px 0;
 	width: 80%;
+}
+
+.contribution-list {
+	margin-top: 20px;
+}
+
+.collab-list table {
+	width: 80% !important;
+	margin-left: 10% !important;
+	margin-bottom: 20px;
+}
+
+th {
+	text-align: center !important;
+	vertical-align: middle;
 }
 
 @media screen and (min-width: 64em) {
@@ -284,8 +300,29 @@ div.user-buttons {
 	text-align: center;
 }
 
+// Wiki Page Edit Buttons
+
 .user-edit {
+	width: 90%;
 	padding: 15px 0;
+	margin-left: 5%;
+}
+
+.user-edit form {
+	margin: 0 auto !important;
+}
+
+.user-edit button,
+.user-edit a,
+.user-edit form.pure-form > button {
+	width: 350px;
+	padding: 10px 0;
+	margin-top: 15px;
+}
+
+.contribution-list table {
+	width: 90%;
+	margin-left: 5%;
 }
 
 // Upgrade Form
@@ -331,21 +368,19 @@ div.user-buttons {
 }
 
 .alert ul {
-	padding: 0
+	padding: 0;
 }
 
-.alert ul>li {
+.alert ul > li {
 	width: 80%;
 	margin: 5px 10%;
 	list-style-type: square;
-	text-align: left; 
+	text-align: left;
 }
 
 .wiki-guide h4 {
 	text-align: center;
 }
-
-
 
 @media screen and (max-width: 767px) {
 	div.title-bar-right {

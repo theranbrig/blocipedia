@@ -140,23 +140,35 @@ i.fa-globe {
 	letter-spacing: 0.15em;
 }
 
+.collab-list th,
 .wiki-list-head th {
 	font-family: $main-font;
 	font-weight: 300;
 	font-size: 1.3em;
 }
 
+.collab-list tr,
 .wiki-list-row {
 	font-family: $second-font;
 }
 
+th.wiki-list-head-title {
+	text-align: left !important;
+}
+
+th.wiki-list-head-date {
+	text-align: right !important;
+}
+
+.collab-list a,
 .wiki-list-row a {
 	text-decoration: none;
 }
 
+.collab-list td,
 .wiki-list-row td {
 	font-size: 1.1em;
-	letter-spacing: 0.13em;
+	letter-spacing: 0.08em;
 }
 
 a.user-link {
@@ -186,15 +198,23 @@ a.user-link {
 	line-height: 1.2em;
 }
 
-.wiki-guide>.alert>h3 {
-font-family: $main-font;
-font-weight: 300;
-margin-top: 30px;
+.wiki-guide > .alert > h3 {
+	font-family: $main-font;
+	font-weight: 300;
+	margin-top: 30px;
 }
 
 .wiki-guide h4 {
 	font-family: $main-font;
 	font-weight: 300;
+}
+
+.contribution-list td {
+	font-family: $main-font;
+}
+
+.contribution-list th {
+	text-align: center;
 }
 
 // Tablet View

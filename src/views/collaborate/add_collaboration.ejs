@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+  <% include ../static/partials/head.ejs %>
+</head>
+
+<body>
+
+  <div id="layout">
+    <% include ../static/partials/navbar.ejs %>
+    <div class="pure-g">
+    <div class="pure-u-1">
+      <div class="title-bar-left"></div>
+        <div class="sign-up-form">
+          <h1>Stop. Collaborate, and Wiki</h1>
+          <h2>Edit <%= wiki.title %> Wiki</h2>
+          <p>Add collaborators to the <%= wiki.title %> Wiki.  Add others who share your interests or experiences.</p>
+          <% include ../static/partials/messages.ejs %>
+          <div class="collab-list">
+            <form method="POST" action="collaborate/add" class="text-center">
+              <table class="pure-table pure-table-horizontal pure-table-striped">
+                <thead>
+                  <tr class="text-center">
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Give Access</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% users.forEach((user) => { %>
+                  <tr>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td><input class="radio-btn" type="radio" name="userId" value="<%= user.id %>"></td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+              <input type="submit" value="Add User" class="pure-button pure-button-primary">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ../static/partials/bodyscripts.ejs %>
+</body>

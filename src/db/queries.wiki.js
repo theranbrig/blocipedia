@@ -1,6 +1,7 @@
 const Wiki = require('./models').Wiki;
 const User = require('./models').User;
 const Authorizer = require('../policies/wiki');
+const Collaborator = require('./models').Collaborator;
 
 module.exports = {
 	getAllWikis(callback) {
@@ -12,6 +13,7 @@ module.exports = {
 				callback(err);
 			});
 	},
+
 	addWiki(newWiki, callback) {
 		return Wiki.create({
 			title: newWiki.title,
@@ -30,17 +32,30 @@ module.exports = {
 				console.log(err);
 			});
 	},
+
 	getWiki(id, callback) {
+		let result = {};
 		return Wiki.findById(id, {
 			include: [{ model: User }]
-		})
-			.then(wiki => {
-				callback(null, wiki);
-			})
-			.catch(err => {
-				callback(err);
-			});
+		}).then(wiki => {
+			if (!wiki) {
+				callback(404);
+			} else {
+				result['wiki'] = wiki;
+				Collaborator.scope({ method: ['collaboratorsFor', id] })
+					.all()
+					.then(collaborators => {
+						result['collaborators'] = collaborators;
+						callback(null, result);
+					})
+					.catch(err => {
+						console.log(err);
+						callback(err);
+					});
+			}
+		});
 	},
+
 	deleteWiki(req, callback) {
 		return Wiki.findById(req.params.id)
 			.then(wiki => {
@@ -57,6 +72,7 @@ module.exports = {
 				callback(err);
 			});
 	},
+
 	updateWiki(req, updatedWiki, callback) {
 		return Wiki.findById(req.params.id).then(wiki => {
 			if (!wiki) {
@@ -90,6 +106,16 @@ module.exports = {
 					}
 				});
 				callback(null, wiki);
+			})
+			.catch(err => {
+				callback(err);
+			});
+	},
+
+	searchByUser(userId) {
+		return Wiki.findAll({ where: { userId: userId } })
+			.then(wikis => {
+				callback(null, wikis);
 			})
 			.catch(err => {
 				callback(err);

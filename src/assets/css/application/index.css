@@ -72,10 +72,13 @@ a.back-to-top,
   text-shadow: #0a0c0b 0px 0px 7px;
 }
 
-.wiki-list-row a {
+.collab-list a,
+.wiki-list-row a,
+table a {
   color: #719490;
 }
 
+.collab-list th,
 .wiki-list-head {
   background-color: #9db5b2 !important;
   color: #fefefe !important;
@@ -207,10 +210,13 @@ a.back-to-top,
   text-shadow: #0a0c0b 0px 0px 7px;
 }
 
-.wiki-list-row a {
+.collab-list a,
+.wiki-list-row a,
+table a {
   color: #719490;
 }
 
+.collab-list th,
 .wiki-list-head {
   background-color: #9db5b2 !important;
   color: #fefefe !important;
@@ -442,10 +448,13 @@ a.back-to-top,
   text-shadow: #0a0c0b 0px 0px 7px;
 }
 
-.wiki-list-row a {
+.collab-list a,
+.wiki-list-row a,
+table a {
   color: #719490;
 }
 
+.collab-list th,
 .wiki-list-head {
   background-color: #9db5b2 !important;
   color: #fefefe !important;
@@ -585,10 +594,13 @@ a.back-to-top,
   text-shadow: #0a0c0b 0px 0px 7px;
 }
 
-.wiki-list-row a {
+.collab-list a,
+.wiki-list-row a,
+table a {
   color: #719490;
 }
 
+.collab-list th,
 .wiki-list-head {
   background-color: #9db5b2 !important;
   color: #fefefe !important;
@@ -773,8 +785,9 @@ img.side-bar-image {
   margin: 10px 0;
 }
 
-.side-content li p {
-  margin: 3px 0;
+.side-content p {
+  width: 90%;
+  margin: 7px 5% !important;
 }
 
 .side-content li {
@@ -800,6 +813,21 @@ div.user-buttons {
   margin: 7px 0;
   padding: 8px 0;
   width: 80%;
+}
+
+.contribution-list {
+  margin-top: 20px;
+}
+
+.collab-list table {
+  width: 80% !important;
+  margin-left: 10% !important;
+  margin-bottom: 20px;
+}
+
+th {
+  text-align: center !important;
+  vertical-align: middle;
 }
 
 @media screen and (min-width: 64em) {
@@ -917,7 +945,26 @@ div.user-buttons {
 }
 
 .user-edit {
+  width: 90%;
   padding: 15px 0;
+  margin-left: 5%;
+}
+
+.user-edit form {
+  margin: 0 auto !important;
+}
+
+.user-edit button,
+.user-edit a,
+.user-edit form.pure-form > button {
+  width: 350px;
+  padding: 10px 0;
+  margin-top: 15px;
+}
+
+.contribution-list table {
+  width: 90%;
+  margin-left: 5%;
 }
 
 .upgrade-form {
@@ -1118,23 +1165,35 @@ i.fa-globe {
   letter-spacing: 0.15em;
 }
 
+.collab-list th,
 .wiki-list-head th {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 1.3em;
 }
 
+.collab-list tr,
 .wiki-list-row {
   font-family: "Raleway", sans-serif;
 }
 
+th.wiki-list-head-title {
+  text-align: left !important;
+}
+
+th.wiki-list-head-date {
+  text-align: right !important;
+}
+
+.collab-list a,
 .wiki-list-row a {
   text-decoration: none;
 }
 
+.collab-list td,
 .wiki-list-row td {
   font-size: 1.1em;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.08em;
 }
 
 a.user-link {
@@ -1171,6 +1230,14 @@ a.user-link {
 .wiki-guide h4 {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
+}
+
+.contribution-list td {
+  font-family: "Montserrat", sans-serif;
+}
+
+.contribution-list th {
+  text-align: center;
 }
 
 @media screen and (max-width: 48em) {

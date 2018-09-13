@@ -24,16 +24,23 @@
               <% include ../static/partials/upgrade_form.ejs %>
             <% } %>
           <% } %>
-          <h2>Wiki Contributions</h2>
+          <h2>Wiki Creations</h2>
           <div class="contribution-list">
             <table class="pure-table pure-table-horizontal pure-table-striped">
               <thead class="wiki-list-head">
                 <tr>
                   <th class="wiki-list-head-title">Wiki</th>
-                  <th class="wiki-list-head-body">Description</th>
                   <th class="wiki-list-head-date">Last Update</th>
                 </tr>
               </thead>
+              <tbody>
+                <% wikis.forEach(wiki => { %>
+                  <tr>
+                    <td><%= wiki.title %> </td>
+                    <td style="text-align:right"><%= wiki.updatedAt.toDateString().slice(4, 15) %> </td>
+                  </tr>
+                <% }) %>
+              </tbody>
             </table>
           </div>
         </div>

@@ -80,10 +80,13 @@ a.back-to-top,
 	text-shadow: darken($black-olive, 20%) 0px 0px 7px;
 }
 
-.wiki-list-row a {
+.collab-list a,
+.wiki-list-row a,
+table a {
 	color: darken($cambridge-blue, 15%);
 }
 
+.collab-list th,
 .wiki-list-head {
 	background-color: $cambridge-blue !important;
 	color: lighten($white, 10%) !important;

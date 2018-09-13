@@ -17,7 +17,11 @@
 								<% } else { %>
 									<img src="<%= wiki.image1 %>" alt="<%= wiki.title %>-main image"/>
 								<% } %>
-								<h1><%= wiki.title %></h1>
+								<% if (wiki.private) { %>
+									<h1><%= wiki.title %> <i class="fas fa-unlock-alt"></i></h1>
+								<% } else { %>
+									<h1><%= wiki.title %></h1>
+								<% } %>
 							</div>
 						<div class="pure-u-1 wiki-content">
 							<div class="pure-u-1 pure-u-lg-2-3 main-content">
@@ -34,29 +38,61 @@
 									<%- wikiMarkdown.fastFacts %>
 								</div>
 								<div class="user-edit">
-									<a class="user-link" href="/users/<%= wiki.User.id %> ">Created by: <%= wiki.User.username %> </a>
-									<% if (currentUser) { %>
-										<% if (wiki.private && currentUser.role == 0) { %>
-											<p>You are not allowed to edit this wiki.</p>
-										<% } else { %>
-											<div class="user-buttons">
+									<a class="user-link" href="/users/<%= wiki.User.id %>">Created by: <%= wiki.User.username %> </a>
+										<% if (currentUser) { %>
+											<% if (wiki.private) { %>
+												<% if (currentUser.role != 0 || currentUser.id == wiki.User.id) { %>
+													<a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-button-primary">Edit Wiki</a>
+													<form action='/wikis/<%= wiki.id %>/destroy' style="margin: 0 auto" class="pure-form" method="POST">
+														<button type="submit"class="pure-button pure-button-primary">Delete Wiki</button>
+													</form>
+													<a href='/wikis/<%= wiki.id %>/collaborate' class="pure-button pure-button-primary">Add Collaborator</a>
+													<a href='/wikis/<%= wiki.id %>/collaborate/edit' class="pure-button pure-button-primary">Remove Collaborator</a>
+												<% } else { %>
+														<% collaborators.forEach(collaborator => { %>
+															<% if (collaborator.userId == currentUser.id) { %>
+																<a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-button-primary">Edit Wiki</a>
+															<% } %>
+														<% }) %>
+												<% } %>
+											<% } else { %>
 												<a href='/wikis/<%= wiki.id %>/edit' class="pure-button pure-button-primary">Edit Wiki</a>
 												<% if (currentUser.role != 0 || wiki.User.id == currentUser.id) { %>
-													<form action='/wikis/<%= wiki.id %>/destroy' method="POST">
+													<form action='/wikis/<%= wiki.id %>/destroy' style="margin: 0 auto" class="pure-form" method="POST">
 														<button type="submit"class="pure-button pure-button-primary">Delete Wiki</button>
 													</form>
 												<% } %>
-											</div>
+											<% } %>
+										<% } else { %>
+											<p>You need to sign in first to edit Wikis</p>
 										<% } %>
-									<% } %>
 								</div>
-							</div>
-							<% include ../static/partials/messages.ejs %>
-							<footer>
-								<a class="back-to-top"href='#top-image'>Back to top</a>
-							</footer>
+								<% if (wiki.private) { %>
+									<div class="contribution-list">
+										<table class="pure-table pure-table-horizontal pure-table-striped">
+											<thead class="wiki-list-head">
+												<tr>
+													<th class="wiki-list-head-title">Wiki Contributors</th>
+												</tr>
+											</thead>
+											<tbody>
+												<% collaborators.forEach(collaborator => { %>
+													<tr>
+														<td><a href="/users/<%= wiki.User.id %>"><%= collaborator.User.username %></a> </td>
+													</tr>
+												<% }) %>
+											</tbody>
+										</table>
+									</div>
+								<% } %>
 						</div>
+
+						<% include ../static/partials/messages.ejs %>
+						<footer>
+							<a class="back-to-top"href='#top-image'>Back to top</a>
+						</footer>
 					</div>
+				</div>
 			</div>
   </div>
   <% include ../static/partials/bodyscripts.ejs %>

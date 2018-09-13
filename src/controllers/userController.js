@@ -4,6 +4,7 @@ const passport = require('passport');
 const sgMail = require('@sendgrid/mail');
 const stripe = require('stripe')(process.env.STRIPE_API_KEY);
 const User = require('../db/models').User;
+const Wiki = require('../db/models').Wiki;
 
 module.exports = {
 	signUp(req, res, next) {
@@ -66,13 +67,17 @@ module.exports = {
 	},
 
 	show(req, res, next) {
-		userQueries.getUser(req.params.id, (err, user) => {
-			if (err || user === undefined) {
-				req.flash('notice', 'User not found');
-				res.redirect('/');
-			} else {
-				res.render(`users/show`, { user });
-			}
+		userQueries.getUser(req.params.id, (err, result) => {
+			user = result['user'];
+			Wiki.findAll({ where: { userId: user.id } }).then(wikis => {
+				console.log(wikis);
+				if (err || user === undefined) {
+					req.flash('notice', 'User not found');
+					res.redirect('/');
+				} else {
+					res.render(`users/show`, { user, wikis });
+				}
+			});
 		});
 	},
 
@@ -115,7 +120,7 @@ module.exports = {
 					req.flash('notice', 'Something went wrong.  Please try again.');
 					res.redirect(`/users/${user.id}`);
 				} else {
-					req.flash('notice', 'Sorry to see you go.  You should recieve your refund shortly.');
+					req.flash('notice', 'Sorry to see you go.  You should receive your refund shortly.');
 					res.redirect(301, `/users/${user.id}`);
 				}
 			})

@@ -16,7 +16,7 @@
           <% include ../static/partials/messages.ejs %>
           <% if (currentUser) { %>
             <p>Start browsing our most recently created wikis.  Click on a wiki to explore, edit, or create your own.</p>
-            <% if (currentUser.role == 0) { %>
+            <% if (currentUser.isStandard()) { %>
               <% include ../static/partials/upgrade_form.ejs %>
             <% } %>
             <a href="wikis/new" class="pure-button pure-button-primary">Create Your Own Wiki</a>
@@ -38,10 +38,10 @@
                   <% wikis.forEach(wiki => { %>
                     <tr class="wiki-list-row">
                       <% if (currentUser) { %>
-                        <% if (wiki.private && currentUser.role == 0) { %>
-                          <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><i class="fas fa-lock"></i><%= wiki.title %></a></td>
-                        <% } else if (wiki.private && currentUser.role == 1 || wiki.userId == currentUser.id) { %>
+                        <% if ((wiki.private && currentUser.isPremium()) || (wiki.userId == currentUser.id) || (collaborations.filter(collab => collab.userId == currentUser.id && collab.wikiId == wiki.id).length > 0)) { %>
                           <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><i class="fas fa-lock-open"></i><%= wiki.title %></a></td>
+                        <% } else if (wiki.private && currentUser.isStandard()) { %>
+                          <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><i class="fas fa-lock"></i><%= wiki.title %></a></td>
                         <% } else { %>
                           <td class="wiki-list-row-title"><a href="wikis/<%= wiki.id %>"><%= wiki.title %></a></td>
                         <% } %>

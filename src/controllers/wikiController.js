@@ -1,17 +1,25 @@
 const wikiQueries = require('../db/queries.wiki.js');
+const userQueries = require('../db/queries.users.js');
+const collaboratorQueries = require('../db/queries.collaborators');
 const authorizer = require('../policies/wiki');
 const markdown = require('markdown').markdown;
 
 module.exports = {
 	index(req, res, next) {
 		wikiQueries.getAllWikis((err, wikis) => {
-			if (err) {
-				res.redirect(500, '/');
-			} else {
-				res.render('wikis/wiki', { wikis });
-			}
+			collaboratorQueries.allCollaborations((err, collaborations) => {
+				collaborations.forEach(collab => {
+					console.log(collab.userId, collab.wikiId);
+				});
+				if (err) {
+					res.redirect(500, '/');
+				} else {
+					res.render('wikis/wiki', { wikis, collaborations });
+				}
+			});
 		});
 	},
+
 	new(req, res, next) {
 		const authorized = new authorizer(req.user).new();
 		if (authorized) {
@@ -21,6 +29,7 @@ module.exports = {
 			res.redirect('/wikis');
 		}
 	},
+
 	create(req, res, next) {
 		const premium = new authorizer(req.user).premium();
 		const authorized = new authorizer(req.user).new();
@@ -50,19 +59,28 @@ module.exports = {
 			req.redirect('/wikis');
 		}
 	},
+
 	show(req, res, next) {
 		const premium = new authorizer(req.user).premium();
-
-		wikiQueries.getWiki(req.params.id, (err, wiki) => {
+		wikiQueries.getWiki(req.params.id, (err, result) => {
+			wiki = result['wiki'];
+			collaborators = result['collaborators'];
 			let wikiMarkdown = {
 				body: markdown.toHTML(wiki.body),
 				fastFacts: markdown.toHTML(wiki.fastFacts)
 			};
+			let collabAuth = false;
+			collaborators.forEach(collab => {
+				if (collab.userId === req.user.id) {
+					return (collabAuth = true);
+				}
+				return (collabAuth = false);
+			});
 			if (err || wiki == null) {
 				res.redirect(404, '/');
 			} else {
-				if ((wiki.private && premium) || !wiki.private) {
-					res.render('wikis/show', { wiki, wikiMarkdown });
+				if ((wiki.private && premium) || !wiki.private || collabAuth) {
+					res.render('wikis/show', { wiki, wikiMarkdown, collabAuth });
 				} else {
 					req.flash('notice', 'You must be a Premium Member to view that Wiki.');
 					res.redirect('/wikis');
@@ -70,6 +88,7 @@ module.exports = {
 			}
 		});
 	},
+
 	destroy(req, res, next) {
 		wikiQueries.deleteWiki(req, (err, wiki) => {
 			if (err) {
@@ -79,8 +98,10 @@ module.exports = {
 			}
 		});
 	},
+
 	edit(req, res, next) {
-		wikiQueries.getWiki(req.params.id, (err, wiki) => {
+		wikiQueries.getWiki(req.params.id, (err, result) => {
+			wiki = result['wiki'];
 			if (err || wiki == null) {
 				res.redirect(404, '/');
 			} else {

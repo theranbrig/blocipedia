@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+  <% include ../static/partials/head.ejs %>
+</head>
+
+<body>
+
+  <div id="layout">
+    <% include ../static/partials/navbar.ejs %>
+    <div class="pure-g">
+    <div class="pure-u-1">
+      <div class="title-bar-left"></div>
+        <div class="sign-up-form">
+          <h1>Stop. Collaborate, and Wiki</h1>
+          <h2>Edit <%= wiki.title %> Wiki Collaborators</h2>
+          <p>Remove Wiki Collaborators as needed.  Remove selected Collaborators from the list below.</p>
+          <div class="collab-list">
+            <form method="POST" action="remove" class="text-center">
+              <table class="pure-table pure-table-horizontal pure-table-striped">
+                <thead>
+                  <tr class="text-center">
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Remove Access</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% collaborators.forEach((collaboartor) => { %>
+                  <tr>
+                    <td><%= collaboartor.User.username %></td>
+                    <td><%= collaboartor.User.email %></td>
+                    <td><input type="radio" name="id" value="<%= collaboartor.id %>"></td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+              <input type="submit" value="Remove User" class="pure-button pure-button-primary">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ../static/partials/bodyscripts.ejs %>
+</body>
