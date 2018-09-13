@@ -69,18 +69,22 @@ module.exports = {
 				body: markdown.toHTML(wiki.body),
 				fastFacts: markdown.toHTML(wiki.fastFacts)
 			};
-			let collabAuth = false;
-			collaborators.forEach(collab => {
-				if (collab.userId === req.user.id) {
-					return (collabAuth = true);
+			console.log(wiki);
+			const collabAuth = collaborators.some(collab => {
+				if (req.user == null && wiki.private) {
+					return false;
+				} else {
+					return collab.wikiId == wiki.id && collab.userId == req.user.id;
 				}
-				return (collabAuth = false);
 			});
+
+			console.log(collabAuth);
+
 			if (err || wiki == null) {
 				res.redirect(404, '/');
 			} else {
-				if ((wiki.private && premium) || !wiki.private || collabAuth) {
-					res.render('wikis/show', { wiki, wikiMarkdown, collabAuth });
+				if ((wiki.private && (premium || collabAuth)) || !wiki.private) {
+					res.render('wikis/show', { wiki, wikiMarkdown });
 				} else {
 					req.flash('notice', 'You must be a Premium Member to view that Wiki.');
 					res.redirect('/wikis');
@@ -116,6 +120,7 @@ module.exports = {
 			}
 		});
 	},
+
 	update(req, res, next) {
 		wikiQueries.updateWiki(req, req.body, (err, wiki) => {
 			if (err || wiki == null) {

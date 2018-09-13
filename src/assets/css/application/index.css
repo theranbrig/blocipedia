@@ -954,10 +954,15 @@ th {
   margin: 0 auto !important;
 }
 
+a.user-link {
+  display: block;
+  margin: 0 auto !important;
+}
+
 .user-edit button,
 .user-edit a,
 .user-edit form.pure-form > button {
-  width: 350px;
+  width: 300px;
   padding: 10px 0;
   margin-top: 15px;
 }
@@ -1022,10 +1027,26 @@ th {
   div.title-bar-right {
     height: 0 !important;
   }
+
+  .user-edit button,
+.user-edit a,
+.user-edit form.pure-form > button {
+    width: 200px;
+    padding: 10px 0;
+    margin-top: 15px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .features-list p {
     width: 50% !important;
+  }
+
+  .user-edit button,
+.user-edit a,
+.user-edit form.pure-form > button {
+    width: 200px;
+    padding: 10px 0;
+    margin-top: 15px;
   }
 }
 h1 {
