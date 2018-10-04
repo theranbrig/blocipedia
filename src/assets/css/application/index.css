@@ -1038,7 +1038,8 @@ a.user-link {
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .features-list p {
-    width: 50% !important;
+    width: 70% !important;
+    margin-left: 15% !important;
   }
 
   .user-edit button,
