@@ -109,10 +109,10 @@ heroku open
 
 Theran Brigowatz is a Full-stack Web Developer currently out of Seoul, South Korea.  Check him out at the following:
 
-* theran.co
+* [theran.co](www.theran.co)
 * theran.brigowatz@gmail.com
-* twitter.com/wellBuilt
-* github.com/theranbrig
+* [twitter.com/wellBuilt](www.twitter.com/wellBuilt)
+* [github.com/theranbrig](www.github.com/theranbrig)
 
 
 
