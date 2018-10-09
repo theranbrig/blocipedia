@@ -107,12 +107,16 @@ heroku open
 
 ## Author
 
-Theran Brigowatz is a Full-stack Web Developer currently out of Seoul, South Korea.  Check him out at the following:
+## Author
 
-* [theran.co](www.theran.co)
+Theran Brigowatz is a Full-stack Web Developer currently out of Seoul, South Korea, but transitioning back to the US.  Check him out at the following:
+
+* [theran.co](https://www.theran.co)
 * theran.brigowatz@gmail.com
-* [twitter.com/wellBuilt](www.twitter.com/wellBuilt)
-* [github.com/theranbrig](www.github.com/theranbrig)
+* [twitter.com/wellBuilt](https://www.twitter.com/wellBuilt)
+* [github.com/theranbrig](https://www.github.com/theranbrig)
+
+> Made with :heart: and :coffee:.
 
 
 
